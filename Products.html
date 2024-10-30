@@ -109,7 +109,7 @@
                 </div>
                 <p>$50.00</p>
 
-                <a href="#" class="btn add-to-cart">Ajouter au panier</a>
+                <a href="cart.html" class="btn add-to-cart">Ajouter au panier</a>
                 
             </div>
 
@@ -124,7 +124,7 @@
                     <i class="fa fa-star-o" aria-hidden="true"></i>
                 </div>
                 <p>$50.00</p>
-                <a href="#" class="btn add-to-cart">Ajouter au panier</a>
+                <a href="cart.html" class="btn add-to-cart">Ajouter au panier</a>
             </div>
 
             <div class="col-4" data-category="Pants" data-price="50">
@@ -138,7 +138,7 @@
                     <i class="fa fa-star-o" aria-hidden="true"></i>
                 </div>
                 <p>$50.00</p>
-                <a href="#" class="btn add-to-cart">Ajouter au panier</a>
+                <a href="cart.html" class="btn add-to-cart">Ajouter au panier</a>
             </div>
 
             <div class="col-4" data-category="tshirt" data-price="100">
@@ -153,7 +153,7 @@
 
                 </div>
                 <p>$100.00</p>
-                <a href="#" class="btn add-to-cart">Ajouter au panier</a>
+                <a href="cart.html" class="btn add-to-cart">Ajouter au panier</a>
             </div>
         </div>
 
@@ -172,7 +172,7 @@
                     <i class="fa fa-star-o" aria-hidden="true"></i>
                 </div>
                 <p>$20.00</p>
-                <a href="#" class="btn add-to-cart">Ajouter au panier</a>
+                <a href="cart.html" class="btn add-to-cart">Ajouter au panier</a>
             </div>
 
             <div class="col-4"  data-category="tshirt" data-price="40">
@@ -186,7 +186,7 @@
                     <i class="fa fa-star-o" aria-hidden="true"></i>
                 </div>
                 <p>$40.00</p>
-                <a href="#" class="btn add-to-cart">Ajouter au panier</a>
+                <a href="cart.html" class="btn add-to-cart">Ajouter au panier</a>
             </div>
 
             <div class="col-4" data-category="Accessories" data-price="70">
@@ -200,7 +200,7 @@
                     <i class="fa fa-star-o" aria-hidden="true"></i>
                 </div>
                 <p>$70.00</p>
-                <a href="#" class="btn add-to-cart">Ajouter au panier</a>
+                <a href="cart.html" class="btn add-to-cart">Ajouter au panier</a>
             </div>
 
             <div class="col-4" data-category="Accessories" data-price="50">
@@ -215,7 +215,7 @@
 
                 </div>
                 <p>$50.00</p>
-                <a href="#" class="btn add-to-cart">Ajouter au panier</a>
+                <a href="cart.html" class="btn add-to-cart">Ajouter au panier</a>
             </div>
         </div>
         <div class="row">
@@ -230,7 +230,7 @@
                     <i class="fa fa-star-o" aria-hidden="true"></i>
                 </div>
                 <p>$80.00</p>
-                <a href="#" class="btn add-to-cart">Ajouter au panier</a>
+                <a href="cart.html" class="btn add-to-cart">Ajouter au panier</a>
             </div>
 
             <div class="col-4" data-category="shoes" data-price="75">
@@ -244,7 +244,7 @@
                     <i class="fa fa-star-o" aria-hidden="true"></i>
                 </div>
                 <p>$75.00</p>
-                <a href="#" class="btn add-to-cart">Ajouter au panier</a>
+                <a href="cart.html" class="btn add-to-cart">Ajouter au panier</a>
             </div>
 
             <div class="col-4" data-category="shoes" data-price="60">
@@ -258,7 +258,7 @@
                     <i class="fa fa-star-o" aria-hidden="true"></i>
                 </div>
                 <p>$60.00</p>
-                <a href="#" class="btn add-to-cart">Ajouter au panier</a>
+                <a href="cart.html" class="btn add-to-cart">Ajouter au panier</a>
             </div>
 
             <div class="col-4" data-category="Pants" data-price="90">
@@ -273,7 +273,7 @@
 
                 </div>
                 <p>$90.00</p>
-                <a href="#" class="btn add-to-cart">Ajouter au panier</a>
+                <a href="cart.html" class="btn add-to-cart">Ajouter au panier</a>
             </div>
         </div>
 
@@ -383,7 +383,37 @@ function filterByPrice(maxPrice) {
         }
     });
 }
+        //-----------------------------------------------------------------------
+             function openProductDetail(name, price, image, description) {
+            const product = { name, price, image, description };
+            localStorage.setItem('selectedProduct', JSON.stringify(product));
+            window.location.href = 'product-detail.html';
+        }
 
+
+
+//---------------------------------------------------------------------------------
+       
+    function openProductDetail(name, price, image, description) {
+        const product = { name, price, image, description };
+        localStorage.setItem('selectedProduct', JSON.stringify(product));
+        window.location.href = 'product-detail.html';
+    }
+
+    // Call this function when clicking on a product link
+    document.querySelectorAll('.col-4 a.btn').forEach((button, index) => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            const product = e.currentTarget.closest('.col-4');
+            const name = product.querySelector('h4').textContent;
+            const price = product.querySelector('p').textContent;
+            const image = product.querySelector('img').src;
+            const description = "This is a detailed description of the product.";  // Customize per product
+            openProductDetail(name, price, image, description);
+        });
+    });
+
+        
     </script>
 
 

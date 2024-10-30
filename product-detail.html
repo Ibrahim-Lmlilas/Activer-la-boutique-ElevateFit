@@ -14,6 +14,7 @@
 <!---- icon cdn link---->
 
 
+
     </head>
 
     <body>
@@ -25,19 +26,20 @@
       
                 <nav id="nav">
                   
-                  <img src="images/logo-white.png" class="logo">
+                  <a href="index.html"><img src="images/logo-white.png" class="logo"></a>
                   
                   <ul class="menu-bar-side">
                     <li><a href="index.html" style=" all: unset;">Home</a></li>
                     <li><a href="Products.html" style=" all: unset;">Shope</a></li>
                     <li><a href="#" style=" all: unset;">about</a></li>
                     <li><a href="#" style=" all: unset;">contact us</a></li>
+                    <li><a href="#" style=" all: unset;">Wishlist</a></li>
                 </ul>
     
                 <ul class="menu-bar">
     
                     <li>&#36;0.00</li>
-                    <li><i class='fas fa-shopping-cart'></i></li>
+                    <li><a href="cart.html" style="all: unset;"><i class="fas fa-shopping-cart"></i></a></li>
     
                 </ul>
                   
@@ -81,9 +83,9 @@
 
             <!--column related to the text of single product-->
                 <div class="col-2">
-                    <p>Home/ T-Shirt</p>
-                    <h1>Red Printed T-Shirt by HRX</h1>
-                    <h4>$50.00</h4>
+                    <p id="product-cat">Home/ T-Shirt</p>
+                    <h1 id="product-name"> Red Printed T-Shirt by HRX</h1>
+                    <h4 id="product-price">$50.00</h4>
 
                     <!--sizes selection-->
                     <select>
@@ -100,7 +102,7 @@
                     <a href="" class="btn">Add To Cart</a><!--add to cart button-->
                     <h3>Product Details <i class="fa fa-indent" aria-hidden="true"></i></h3>
                     <br>
-                    <p>Give Your summer wardrobe a style upgrade with the HTX Men's 
+                    <p id="product-description">Give Your summer wardrobe a style upgrade with the HTX Men's 
                     Active T-shirt. Team it with a pair of shorts for your morning
                     Workout or a denims for an evening out with the guys.
                     </p>
@@ -178,8 +180,6 @@
        
 `      
     </div>
-
-    
  
     <!-------footer------->
     <div class="footer">
@@ -233,10 +233,33 @@
     </div>         
 
     <!-----------------JS----------------------->
-
-
-<script src="js/script.js"></script>
     
+<script src="js/script.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const product = JSON.parse(localStorage.getItem('selectedProduct'));
+        if (product) {
+            document.getElementById('product-name').textContent = product.name;
+            document.getElementById('product-price').textContent = product.price;
+            document.getElementById('product-img').src = product.image;
+            document.getElementById('product-description').textContent = product.description;
+        }
+    });
+//------------------------------------------------------------------------------------------
+    function addToCart() {
+        const product = JSON.parse(localStorage.getItem('selectedProduct'));
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.push(product);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert('Product added to cart');
+    }
+
+    document.querySelector('.btn').addEventListener('click', (e) => {
+        e.preventDefault();
+        addToCart();
+    });
+</script>
+
     </body>
 
 </html>
