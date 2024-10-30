@@ -50,6 +50,10 @@
     </header>
 
 
+
+
+
+
     <!--Featured Products-->
 
 
@@ -60,19 +64,40 @@
             <h2>All Products
 
             </h2>
-            <select>
-                <option>Default Sorting</option>
-                <option>Sort by Price</option>
-                <option>Sort by Popularity</option>
-                <option>Sort by Sale</option>
-            </select>
+           
         </div>
+
+         <!--filtrer par catégorie -->
+<div class="ff">
+ <div class="category-filter">
+    <label for="categorySelect">Filter by Category:</label>
+    <select id="categorySelect">
+        <option value="all">All</option>
+        <option value="tshirt">T-Shirts</option>
+        <option value="Pants">Pants</option>
+
+        <option value="shoes">Shoes</option>
+        <option value="Accessories">Accessories</option>
+    </select>
+</div>
+
+<div class="price-filter">
+    <label for="priceRange"> prix:</label>
+    <input type="range" id="priceRange" min="0" max="200" step="10" value="100">
+    <span id="priceDisplay">100$</span>
+</div>
+
+</div> 
+
+
+
+
 
 
         <div class="row">
 
 
-            <div class="col-4">
+            <div class="col-4" data-category="tshirt" data-price="50" >
                 <img src="Images/product-1.jpg">
                 <h4>Red Printed T-shirt</h4>
                 <div class="rating">
@@ -83,9 +108,12 @@
                     <i class="fa fa-star-o" aria-hidden="true"></i>
                 </div>
                 <p>$50.00</p>
+
+                <a href="#" class="btn add-to-cart">Ajouter au panier</a>
+                
             </div>
 
-            <div class="col-4">
+            <div class="col-4" data-category="shoes" data-price="50">
                 <img src="Images/product-2.jpg">
                 <h4>Red Printed T-shirt</h4>
                 <div class="rating">
@@ -96,9 +124,10 @@
                     <i class="fa fa-star-o" aria-hidden="true"></i>
                 </div>
                 <p>$50.00</p>
+                <a href="#" class="btn add-to-cart">Ajouter au panier</a>
             </div>
 
-            <div class="col-4">
+            <div class="col-4" data-category="Pants" data-price="50">
                 <img src="Images/product-3.jpg">
                 <h4>Red Printed T-shirt</h4>
                 <div class="rating">
@@ -109,9 +138,10 @@
                     <i class="fa fa-star-o" aria-hidden="true"></i>
                 </div>
                 <p>$50.00</p>
+                <a href="#" class="btn add-to-cart">Ajouter au panier</a>
             </div>
 
-            <div class="col-4">
+            <div class="col-4" data-category="tshirt" data-price="100">
                 <img src="Images/product-4.jpg">
                 <h4>Red Printed T-shirt</h4>
                 <div class="rating">
@@ -122,7 +152,8 @@
                     <i class="fa fa-star-half-o" aria-hidden="true"></i>
 
                 </div>
-                <p>$50.00</p>
+                <p>$100.00</p>
+                <a href="#" class="btn add-to-cart">Ajouter au panier</a>
             </div>
         </div>
 
@@ -130,7 +161,7 @@
 
         <div class="row">
 
-            <div class="col-4">
+            <div class="col-4" data-category="shoes" data-price="20">
                 <img src="Images/product-5.jpg">
                 <h4>Red Printed T-shirt</h4>
                 <div class="rating">
@@ -140,10 +171,11 @@
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star-o" aria-hidden="true"></i>
                 </div>
-                <p>$50.00</p>
+                <p>$20.00</p>
+                <a href="#" class="btn add-to-cart">Ajouter au panier</a>
             </div>
 
-            <div class="col-4">
+            <div class="col-4"  data-category="tshirt" data-price="40">
                 <img src="Images/product-6.jpg">
                 <h4>Red Printed T-shirt</h4>
                 <div class="rating">
@@ -153,10 +185,11 @@
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star-o" aria-hidden="true"></i>
                 </div>
-                <p>$50.00</p>
+                <p>$40.00</p>
+                <a href="#" class="btn add-to-cart">Ajouter au panier</a>
             </div>
 
-            <div class="col-4">
+            <div class="col-4" data-category="Accessories" data-price="70">
                 <img src="Images/product-7.jpg">
                 <h4>Red Printed T-shirt</h4>
                 <div class="rating">
@@ -166,10 +199,11 @@
                     <i class="fa fa-star-half-o" aria-hidden="true"></i>
                     <i class="fa fa-star-o" aria-hidden="true"></i>
                 </div>
-                <p>$50.00</p>
+                <p>$70.00</p>
+                <a href="#" class="btn add-to-cart">Ajouter au panier</a>
             </div>
 
-            <div class="col-4">
+            <div class="col-4" data-category="Accessories" data-price="50">
                 <img src="Images/product-8.jpg">
                 <h4>Red Printed T-shirt</h4>
                 <div class="rating">
@@ -181,10 +215,11 @@
 
                 </div>
                 <p>$50.00</p>
+                <a href="#" class="btn add-to-cart">Ajouter au panier</a>
             </div>
         </div>
         <div class="row">
-            <div class="col-4">
+            <div class="col-4" data-category="Accessories" data-price="80">
                 <img src="Images/product-9.jpg">
                 <h4>Red Printed T-shirt</h4>
                 <div class="rating">
@@ -194,10 +229,11 @@
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star-o" aria-hidden="true"></i>
                 </div>
-                <p>$50.00</p>
+                <p>$80.00</p>
+                <a href="#" class="btn add-to-cart">Ajouter au panier</a>
             </div>
 
-            <div class="col-4">
+            <div class="col-4" data-category="shoes" data-price="75">
                 <img src="Images/product-10.jpg">
                 <h4>Red Printed T-shirt</h4>
                 <div class="rating">
@@ -207,10 +243,11 @@
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star-o" aria-hidden="true"></i>
                 </div>
-                <p>$50.00</p>
+                <p>$75.00</p>
+                <a href="#" class="btn add-to-cart">Ajouter au panier</a>
             </div>
 
-            <div class="col-4">
+            <div class="col-4" data-category="shoes" data-price="60">
                 <img src="Images/product-11.jpg">
                 <h4>Red Printed T-shirt</h4>
                 <div class="rating">
@@ -220,10 +257,11 @@
                     <i class="fa fa-star-half-o" aria-hidden="true"></i>
                     <i class="fa fa-star-o" aria-hidden="true"></i>
                 </div>
-                <p>$50.00</p>
+                <p>$60.00</p>
+                <a href="#" class="btn add-to-cart">Ajouter au panier</a>
             </div>
 
-            <div class="col-4">
+            <div class="col-4" data-category="Pants" data-price="90">
                 <img src="Images/product-12.jpg">
                 <h4>Red Printed T-shirt</h4>
                 <div class="rating">
@@ -234,7 +272,8 @@
                     <i class="fa fa-star-half-o" aria-hidden="true"></i>
 
                 </div>
-                <p>$50.00</p>
+                <p>$90.00</p>
+                <a href="#" class="btn add-to-cart">Ajouter au panier</a>
             </div>
         </div>
 
@@ -248,6 +287,8 @@
 
         </div>
     </div>
+    
+
 
     <!-------footer------->
     <div class="footer">
@@ -302,6 +343,48 @@
     </div>
 
     <!-----------------JS----------------------->
+    <script>document.getElementById("categorySelect").addEventListener("change", function () {
+        const selectedCategory = this.value;
+        const products = document.querySelectorAll(".col-4");
+    
+        products.forEach(product => {
+            const category = product.getAttribute("data-category");
+    
+            if (selectedCategory === "all" || category === selectedCategory) {
+                product.style.display = "block";
+            } else {
+                product.style.display = "none";
+            }
+        });
+    });
+
+
+    // Affiche la valeur du slider dans le champ texte
+const priceRange = document.getElementById("priceRange");
+const priceDisplay = document.getElementById("priceDisplay");
+priceDisplay.textContent = `${priceRange.value}$`;
+
+priceRange.addEventListener("input", function() {
+    priceDisplay.textContent = `${priceRange.value}$`;
+    filterByPrice(priceRange.value);
+});
+
+// Fonction de filtrage par prix
+function filterByPrice(maxPrice) {
+    const products = document.querySelectorAll(".col-4");
+
+    products.forEach(product => {
+        const productPrice = parseInt(product.getAttribute("data-price"), 10);
+
+        if (productPrice <= maxPrice) {
+            product.style.display = "block";
+        } else {
+            product.style.display = "none";
+        }
+    });
+}
+
+    </script>
 
 
 </body>

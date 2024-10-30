@@ -7,6 +7,31 @@
 body{
     font-family: 'Poppins', sans-serif;
 }
+/* Style de base pour le bouton */
+.add-to-cart {
+    
+    padding: 10px 20px;
+    background-color: #a74828; /* Couleur de fond initiale */
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ;
+}
+
+
+.add-to-cart:hover {
+    background-color: #000000; 
+    transform: scale(1.05); 
+}
+
+.ff{
+
+    display: flex;
+    justify-content: space-around;
+
+}
 
 .navbar{
     display: flex;

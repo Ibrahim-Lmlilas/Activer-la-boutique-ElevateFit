@@ -104,12 +104,13 @@
   
   header .content{
     position:absolute;
-    top: 28%;
-    left:100px;
+    top: 40%;
+    left:200px;
     transform:translate(0,-50%);
     text-transform:capitalize;
     color:#fff;
-    width:400px;
+    width:450px;
+    
   }
   
   
