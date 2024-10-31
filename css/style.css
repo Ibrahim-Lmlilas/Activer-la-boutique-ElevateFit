@@ -548,10 +548,39 @@ form a{
     transition: transform 1s;
 }
 
+.cartt{
+    align-content: center;
+}
+.cartt h4{
+    color:#fff ;
+    background-color: #ff523b;
+    margin:15px 0 15px 0 ;
+}
 
 
-
-
+.cart-item {
+    display: flex;
+    align-items: center;
+     margin-bottom: 10px; 
+    }
+ .cart-item img { 
+    margin-right: 10px; 
+}
+ .cart-item p { 
+    margin: 0 10px; 
+}
+ .total { 
+    font-weight: bold;
+     margin-top: 20px; 
+       }
+ .quantity-input { 
+    width: 50px; 
+}
+ .remove-btn { 
+    color: red; 
+    cursor: pointer; 
+    margin-left: 10px; 
+}
 
 
 
@@ -585,4 +614,85 @@ form a{
         display:none;/*hide product name in smaller screen*/
     }
 
+}
+/* Existing styles */
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .menu-bar-side {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        padding: 20px;
+    }
+
+    .menu-bar-side.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        background-color: white;
+    }
+
+    .col-2, .col-3, .col-4 {
+        flex: 100%;
+        max-width: 100%;
+    }
+
+    .offer .row {
+        flex-direction: column;
+    }
+
+    .footer .row {
+        flex-direction: column;
+    }
+
+    .footer-col-1, .footer-col-2, .footer-col-3, .footer-col-4 {
+        flex-basis: 100%;
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header .row {
+        text-align: center;
+    }
+
+    .col-2, .col-3, .col-4 {
+        flex-basis: 100%;
+    }
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+tfoot td {
+    font-weight: bold;
+}
+
+.cart-item img {
+    width: 50px;
 }

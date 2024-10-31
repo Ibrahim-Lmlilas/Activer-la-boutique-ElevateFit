@@ -117,7 +117,7 @@
                 <a href="product-detail.html">
                     <h4>Red Printed T-shirt</h4>
                 </a>
-                <div class="rating">
+                <div class="rating" data-category="shoes" data-price="60">
                     <i class="fa fa-star"
                         aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
@@ -129,7 +129,8 @@
             </div>
 
             <div class="col-4">
-                <img src="images/product-2.jpg">
+                <a href="product-detail.html"><img src="images/product-2.jpg"></a>
+
                 <h4>Red Printed T-shirt</h4>
                 <div class="rating">
                     <i class="fa fa-star"
@@ -477,6 +478,26 @@
     </div>
 
     <!-----------------JS----------------------->
+    <script>//---------------------------------------------------------------------------------
+       
+        function openProductDetail(name, price, image, description) {
+            const product = { name, price, image, description };
+            localStorage.setItem('selectedProduct', JSON.stringify(product));
+            window.location.href = 'product-detail.html';
+        }
+    
+        // Call this function when clicking on a product link
+        document.querySelectorAll('.col-4 a.btn').forEach((button, index) => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const product = e.currentTarget.closest('.col-4');
+                const name = product.querySelector('h4').textContent;
+                const price = product.querySelector('p').textContent;
+                const image = product.querySelector('img').src;
+                const description = "This is a detailed description of the product.";  // Customize per product
+                openProductDetail(name, price, image, description);
+            });
+        });</script>
 
 
 </body>

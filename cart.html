@@ -20,14 +20,7 @@
     
     
     
-    <style>
-        .cart-item { display: flex; align-items: center; margin-bottom: 10px; }
-        .cart-item img { margin-right: 10px; }
-        .cart-item p { margin: 0 10px; }
-        .total { font-weight: bold; margin-top: 20px; }
-        .quantity-input { width: 50px; }
-        .remove-btn { color: red; cursor: pointer; margin-left: 10px; }
-    </style>
+   
 </head>
 <body>
 
@@ -57,11 +50,35 @@
 
     </header>
 
-
-    <div id="cart-items"></div>
-    <p class="total">Total: <span id="total-price">$0.00</span></p>
-    <button onclick="proceedToCheckout()">Proceed to Checkout</button>
-
+    <section class="cartt">
+        <table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items"></tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2">Subtotal</td>
+                    <td id="subtotal-price">$0.00</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Tax</td>
+                    <td id="tax-price">$0.00</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Total</td>
+                    <td id="total-price">$0.00</td>
+                </tr>
+            </tfoot>
+        </table>
+        <button onclick="proceedToCheckout()">Proceed to Checkout</button>
+    </section>
+    
+    
 
     <!-------footer------->
     <div class="footer">
@@ -116,54 +133,72 @@
     </div>
 
 <script>
-    function updateTotal() {
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-        document.getElementById('total-price').textContent = `$${total.toFixed(2)}`;
-    }
-
-    function updateQuantity(index, quantity) {
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
-        cart[index].quantity = quantity;
-        localStorage.setItem('cart', JSON.stringify(cart));
-        updateTotal();
-    }
-
-    function removeItem(index) {
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
-        cart.splice(index, 1);
-        localStorage.setItem('cart', JSON.stringify(cart));
-        displayCartItems();
-        updateTotal();
-    }
-
-    function displayCartItems() {
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        const cartContainer = document.getElementById('cart-items');
-        
-        if (cart.length === 0) {
-            cartContainer.innerHTML = "<p>Your cart is empty</p>";
-        } else {
-            cartContainer.innerHTML = cart.map((item, index) => `
-                <div class="cart-item">
-                    <img src="${item.image}" width="100" alt="${item.name}">
+    // Display cart items in the table
+function displayCartItems() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartContainer = document.getElementById('cart-items');
+    
+    if (cart.length === 0) {
+        cartContainer.innerHTML = "<tr><td colspan='3'>The cart is empty</td></tr>";
+    } else {
+        cartContainer.innerHTML = cart.map((item, index) => `
+            <tr>
+                <td>
+                    <img src="${item.image}" width="50" alt="${item.name}">
                     <p>${item.name}</p>
-                    <p>$${item.price}</p>
+                    <p>Price: $${item.price}</p>
+                    <span class="remove-btn" onclick="removeItem(${index})">Remove</span>
+                </td>
+                <td>
                     <input type="number" class="quantity-input" value="${item.quantity}" 
                            onchange="updateQuantity(${index}, this.value)">
-                    <span class="remove-btn" onclick="removeItem(${index})">Remove</span>
-                </div>
-            `).join('');
-        }
-        updateTotal();
+                </td>
+                <td>$${(item.price * item.quantity).toFixed(2)}</td>
+            </tr>
+        `).join('');
     }
+    updateTotal();
+}
 
-    function proceedToCheckout() {
-        alert("Proceeding to checkout!");
-        // Additional checkout logic can be added here
-    }
+// Update quantity when the user changes it
+function updateQuantity(index, quantity) {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    if (quantity < 1) quantity = 1; // Quantity can't be less than 1
+    cart[index].quantity = parseInt(quantity);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    displayCartItems();
+}
 
-    document.addEventListener('DOMContentLoaded', displayCartItems);
+// Remove an item from the cart
+function removeItem(index) {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.splice(index, 1); // Remove the specified item from the cart
+    localStorage.setItem('cart', JSON.stringify(cart));
+    displayCartItems();
+}
+
+// Update subtotal, tax, and total amounts
+function updateTotal() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    const tax = subtotal * 0.15; // Assuming a tax rate of 15%
+    const total = subtotal + tax;
+
+    document.getElementById('subtotal-price').textContent = `$${subtotal.toFixed(2)}`;
+    document.getElementById('tax-price').textContent = `$${tax.toFixed(2)}`;
+    document.getElementById('total-price').textContent = `$${total.toFixed(2)}`;
+}
+
+// Proceed to checkout
+function proceedToCheckout() {
+    alert("Proceeding to checkout...");
+    // Additional code to navigate to the actual checkout page can be added here
+}
+
+// Display items on page load
+document.addEventListener("DOMContentLoaded", displayCartItems);
+
+
 </script>
 
 </body>
