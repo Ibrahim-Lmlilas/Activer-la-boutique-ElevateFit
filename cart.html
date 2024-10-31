@@ -1,30 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>elevateFit</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/detail.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!---- icon cdn link---->
+    
+    
+    
+    
+    <style>
+        .cart-item { display: flex; align-items: center; margin-bottom: 10px; }
+        .cart-item img { margin-right: 10px; }
+        .cart-item p { margin: 0 10px; }
+        .total { font-weight: bold; margin-top: 20px; }
+        .quantity-input { width: 50px; }
+        .remove-btn { color: red; cursor: pointer; margin-left: 10px; }
+    </style>
 </head>
 <body>
+
+    <!--making header-->
+    <header>
+
+        <nav id="nav">
+
+            <img src="images/logo-white.png" class="logo">
+
+            <ul class="menu-bar-side">
+                <li><a href="index.html" style=" all: unset;">Home</a></li>
+                <li><a href="Products.html" style=" all: unset;">Shope</a></li>
+                <li><a href="#" style=" all: unset;">about</a></li>
+                <li><a href="#" style=" all: unset;">contact us</a></li>
+            </ul>
+
+            <ul class="menu-bar">
+
+                <li>&#36;0.00</li>
+                <li><i class='fas fa-shopping-cart'></i></li>
+
+            </ul>
+
+            <i class="fa fa-bars"></i>
+        </nav>
+
+    </header>
+
+
     <div id="cart-items"></div>
+    <p class="total">Total: <span id="total-price">$0.00</span></p>
+    <button onclick="proceedToCheckout()">Proceed to Checkout</button>
+
+
+    <!-------footer------->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+
+
+                <div class="footer-col-1">
+                    <h3>Download Our App</h3>
+                    <p>Download App for Android and Ios mobile phone.</p>
+
+
+                    <div class="app-logo">
+                        <img src="images/play-store.png">
+                        <img src="images/app-store.png">
+                    </div>
+
+                </div>
+
+                <div class="footer-col-2">
+                    <img src="images/logo-white.png">
+                    <p>Our purpose is To Sustainably Make the Pleasure and Benefits of Sports Accessible to the Many.
+                    </p>
+                </div>
+
+                <div class="footer-col-3">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                        <li>Join Affiliate</li>
+                    </ul>
+
+                </div>
+
+                <div class="footer-col-4">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Instagram</li>
+                        <li>Youtube</li>
+                    </ul>
+
+                </div>
+            </div>
+            <!--add horizontal line and copyright text along with clickable link-->
+            <hr>
+            <a href="" class="copyright">Copyright 2024 - Made with ❤️ LorenzCipher</a>
+        </div>
+    </div>
 
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
+    function updateTotal() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        document.getElementById('total-price').textContent = `$${total.toFixed(2)}`;
+    }
+
+    function updateQuantity(index, quantity) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart[index].quantity = quantity;
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateTotal();
+    }
+
+    function removeItem(index) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.splice(index, 1);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        displayCartItems();
+        updateTotal();
+    }
+
+    function displayCartItems() {
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
         const cartContainer = document.getElementById('cart-items');
         
         if (cart.length === 0) {
             cartContainer.innerHTML = "<p>Your cart is empty</p>";
         } else {
-            cartContainer.innerHTML = cart.map(item => `
+            cartContainer.innerHTML = cart.map((item, index) => `
                 <div class="cart-item">
                     <img src="${item.image}" width="100" alt="${item.name}">
                     <p>${item.name}</p>
-                    <p>${item.price}</p>
+                    <p>$${item.price}</p>
+                    <input type="number" class="quantity-input" value="${item.quantity}" 
+                           onchange="updateQuantity(${index}, this.value)">
+                    <span class="remove-btn" onclick="removeItem(${index})">Remove</span>
                 </div>
             `).join('');
         }
-    });
+        updateTotal();
+    }
+
+    function proceedToCheckout() {
+        alert("Proceeding to checkout!");
+        // Additional checkout logic can be added here
+    }
+
+    document.addEventListener('DOMContentLoaded', displayCartItems);
 </script>
 
 </body>
