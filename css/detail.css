@@ -163,35 +163,13 @@ header nav ul:nth-child(3){
   header nav .fa-remove:hover{
     color:#ff523b;
   }
-  
-  
- 
-  
-}
-.imgbtn{
-  position: relative;
-  display: block;
 }
 
-  .imgbtn:hover{
-    opacity: 0.8;
-    cursor: pointer;
+
+@media only screen and (max-width: 768px){
+  .small-img-row {
+    display: flex;
+    width: 25em;
+    justify-content: space-between;
   }
-
-  .imgbtn:hover .add-to-cart{
-    opacity: 1;
-  }
-
-.add-to-cart{
-    position: absolute;
-    bottom: 150px;
-    right: 50px;
-    padding: 10px 20px;
-    background-color: #FF5733;
-    color: white;
-    border-radius: 25px;
-    cursor: pointer;
-    opacity: 0;
-
-
 }

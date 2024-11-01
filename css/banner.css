@@ -105,13 +105,13 @@ header nav ul:nth-child(3){
 
 header .content{
   position:absolute;
-  top: 40%;
-  left:200px;
+  top: 28%;
+  left:100px;
   transform:translate(0,-50%);
   text-transform:capitalize;
   color:#fff;
-  width:450px;
-  
+  width:400px;
+  margin-top: 200px;
 }
 
 
@@ -142,7 +142,7 @@ header .content button{
 }
 
 
-header .content .shopNow{
+header .content .shopNow {
   background:var(--white);
   color:var(--orange);
 }

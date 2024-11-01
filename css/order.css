@@ -1,0 +1,314 @@
+
+header{
+  margin-bottom:60px;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+footer{
+  margin-top: 60px;
+}
+
+/* Container principal */
+.order-container {
+  /* max-width: 1000px; */
+  height: 80%;
+  width: 80%;
+  margin: 0 auto;
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Titre principal */
+.order-title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.order-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background-color: #ff4d4d;
+}
+
+/* Layout du formulaire */
+.order-form-wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+}
+
+/* Styles des groupes d'inputs */
+.order-input-group {
+  margin-bottom: 15px;
+}
+
+/* Labels */
+.order-label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+  font-size: 14px;
+}
+
+.order-required::after {
+  content: ' *';
+  color: #ff4d4d;
+}
+
+/* Inputs */
+.order-input,
+.order-select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.order-optional {
+  font-size: 12px;
+  color: #666;
+  font-style: italic;
+}
+
+/* Marge additionnelle */
+.order-mt-2 {
+  margin-top: 8px;
+}
+
+/* Section résumé de la commande */
+.order-summary-box {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.order-summary-title {
+  color: #fff;
+  margin-bottom: 20px;
+  background-color: red;
+  padding: 10px;
+ display: flex;
+ justify-content: center;
+}
+
+.order-summary-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Section paiement */
+.order-payment-section {
+  margin-top: 20px;
+}
+
+.order-radio-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.order-radio-label {
+  font-size: 14px;
+}
+
+
+.order-submit-btn:hover {
+  background-color: #45a049;
+}
+
+/* Texte d'information paiement */
+.order-payment-info {
+  font-size: 13px;
+  color: #666;
+  margin-top: 10px;
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+
+
+/* Media Queries pour le responsive */
+@media (max-width: 768px) {
+  .order-form-wrapper {
+      grid-template-columns: 1fr;
+  }
+  
+  .order-container {
+      padding: 15px;
+  }
+}
+
+body {
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+/* Container principal */
+.order-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Titre principal */
+.order-title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.order-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background-color: #ff4d4d;
+}
+
+/* Layout du formulaire */
+.order-form-wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+}
+
+/* Styles des groupes d'inputs */
+.order-input-group {
+  margin-bottom: 15px;
+}
+
+/* Labels */
+.order-label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+  font-size: 14px;
+}
+
+.order-required::after {
+  content: ' *';
+  color: #ff4d4d;
+}
+
+/* Inputs */
+.order-input,
+.order-select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.order-optional {
+  font-size: 12px;
+  color: #666;
+  font-style: italic;
+}
+
+/* Marge additionnelle */
+.order-mt-2 {
+  margin-top: 8px;
+}
+
+/* Section résumé de la commande */
+.order-summary-box {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+
+
+.order-summary-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Section paiement */
+.order-payment-section {
+  margin-top: 20px;
+}
+
+.order-radio-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.order-radio-label {
+  font-size: 14px;
+}
+
+/* Bouton de commande */
+.order-submit-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #1E90FF;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+  border-radius: 50px;
+}
+
+.order-submit-btn:hover {
+  background-color: #B0C4DE;
+}
+
+/* Texte d'information paiement */
+.order-payment-info {
+  font-size: 13px;
+  color: #666;
+  margin-top: 10px;
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+
+/* Frais de livraison gratuits */
+.order-free-shipping {
+  color: #1E90FF;
+}
+
+/* Media Queries pour le responsive */
+@media (max-width: 768px) {
+  .order-form-wrapper {
+      grid-template-columns: 1fr;
+  }
+  
+  .order-container {
+      padding: 15px;
+  }
+}

@@ -26,6 +26,32 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <!--- owl carsoul ---->
+    <style>
+        .off-screen-menu{
+            background-color: black;
+            color: azure;
+            height: 100vh;
+            width: 100%;
+            max-width: 450px;
+            position: fixed;
+            top: 0;
+            right: -450px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            gap: 20px;
+            text-transform: uppercase;
+            z-index: 1;
+            transition: .3s ease;
+        }
+        .off-screen-menu.action{
+            right: 0;
+        }
+    </style>
 </head>
 
 <body>
@@ -35,24 +61,35 @@
 
         <nav id="nav">
 
-            <img src="images/logo-white.png" class="logo">
+            <a href="index.html"><img src="images/logo-white.png" class="logo"></a>
 
             <ul class="menu-bar-side">
                 <li><a href="index.html" style=" all: unset;">Home</a></li>
                 <li><a href="Products.html" style=" all: unset;">Shope</a></li>
                 <li><a href="#" style=" all: unset;">about</a></li>
                 <li><a href="#" style=" all: unset;">contact us</a></li>
+                <li><a href="#" style=" all: unset;">Wishlist</a></li>
             </ul>
 
             <ul class="menu-bar">
 
                 <li>&#36;0.00</li>
-                <li><i class='fas fa-shopping-cart'></i></li>
+                <li><a href="cart.html" style="all: unset;"><i class="fas fa-shopping-cart"></i></a></li>
 
             </ul>
 
-            <i class="fa fa-bars"></i>
+            <i id="bar" class="fa fa-bars"></i>
         </nav>
+
+        <div class="off-screen-menu">
+            <ul class="menu-bar-side">
+                <li><a href="index.html" style=" all: unset;">Home</a></li>
+                <li><a href="Products.html" style=" all: unset;">Shope</a></li>
+                <li><a href="#" style=" all: unset;">about</a></li>
+                <li><a href="#" style=" all: unset;">contact us</a></li>
+                <li><a href="#" style=" all: unset;">Wishlist</a></li>
+            </ul>
+        </div>
 
 
         <div class="content">
@@ -61,14 +98,13 @@
                 Raining Offers For Hot Summer!
             </h2>
 
-            <h4>
+            <h4 style="color: var(--orange);">
                 25% Off On All Products
             </h4>
-            <a href="Products.html">
+
             <button class="shopNow">
-                shop now
+                <a href="Products.html" style="color: var(--orange);">shop now</a>
             </button>
-        </a>
             <button class="findMore">
                 find more
             </button>
@@ -77,6 +113,16 @@
 
     </header>
     <!--- end header --->
+    <script>
+        const hamMenu = document.getElementById("bar");
+const offScreenMenu = document.querySelector('.off-screen-menu');
+
+hamMenu.addEventListener('click', () => {
+    // Toggle the 'action' class on the off-screen menu
+    offScreenMenu.classList.toggle('action');
+});
+
+    </script>
 
     <!--Featured categories-->
   
@@ -113,12 +159,12 @@
          
 
             
-            <div class="col-4">
+            <div class="col-4 product" onclick="goToProduct({cat:'Home/ T-Shirt', name: 'Red Printed T-shirt', img: 'images/product-1.jpg', price: '$50.00', description: 'Description of Product 1.' })">
                 <a href="product-detail.html"><img src="images/product-1.jpg"></a>
                 <a href="product-detail.html">
                     <h4>Red Printed T-shirt</h4>
                 </a>
-                <div class="rating" data-category="shoes" data-price="60">
+                <div class="rating">
                     <i class="fa fa-star"
                         aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
@@ -127,12 +173,12 @@
                     <i class="fa fa-star-o" aria-hidden="true"></i>
                 </div>
                 <p>$50.00</p>
+                <button class="add-to-cart"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Card</button>
             </div>
 
-            <div class="col-4">
+            <div class="col-4 product" onclick="goToProduct({cat:'Home/ shoes', name: 'Black shoes', img: 'images/product-2.jpg', price: '$200.00', description: 'Description of Product 1.' })">
                 <a href="product-detail.html"><img src="images/product-2.jpg"></a>
-
-                <h4>Red Printed T-shirt</h4>
+                <h4>Black shoes</h4>
                 <div class="rating">
                     <i class="fa fa-star"
                         aria-hidden="true"></i>
@@ -141,12 +187,13 @@
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star-o" aria-hidden="true"></i>
                 </div>
-                <p>$50.00</p>
+                <p>$200.00</p>
+                <button class="add-to-cart"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Card</button>
             </div>
 
-            <div class="col-4">
-                <img src="images/product-3.jpg">
-                <h4>Red Printed T-shirt</h4>
+            <div class="col-4 product" onclick="goToProduct({cat:'Home/ Pants', name: 'Gray Pant', img: 'images/product-3.jpg', price: '$80.00', description: 'Description of Product 1.' })">
+            <a href="product-detail.html"><img src="images/product-3.jpg"></a>
+                <h4>Gray Pant</h4>
                 <div class="rating">
                     <i class="fa fa-star"
                         aria-hidden="true"></i>
@@ -155,12 +202,13 @@
                     <i class="fa fa-star-half-o" aria-hidden="true"></i>
                     <i class="fa fa-star-o" aria-hidden="true"></i>
                 </div>
-                <p>$50.00</p>
+                <p>$80.00</p>
+                <button class="add-to-cart"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Card</button>
             </div>
 
-            <div class="col-4">
-                <img src="images/product-4.jpg">
-                <h4>Red Printed T-shirt</h4>
+            <div class="col-4 product" onclick="goToProduct({cat:'Home/ T-Shirt', name: 'Dark Printed T-shirt', img: 'images/product-4.jpg', price: '$50.00', description: 'Description of Product 1.' })">
+                <a href="product-detail.html"><img src="images/product-4.jpg"></a>
+                <h4>Darck Printed T-shirt</h4>
                 <div class="rating">
                     <i class="fa fa-star"
                         aria-hidden="true"></i>
@@ -171,6 +219,7 @@
 
                 </div>
                 <p>$50.00</p>
+                <button class="add-to-cart"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Card</button>
             </div>
         </div>
 
@@ -179,9 +228,24 @@
         <h2 class="title">Latest Products</h2>
         <div class="row">
 
-            <div class="col-4">
-                <img src="images/product-5.jpg">
-                <h4>Red Printed T-shirt</h4>
+            <div class="col-4 product" onclick="goToProduct({cat:'Home/ Shoes', name: 'White Shoes', img: 'images/product-5.jpg', price: '$200.00', description: 'Description of Product 1.' })">
+                <a href="product-detail.html"><img src="images/product-5.jpg"></a>
+                <h4>White Shoes</h4>
+                <div class="rating">
+                    <i class="fa fa-star"
+                        aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                </div>
+                <p>$200.00</p>
+                <button class="add-to-cart"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Card</button>
+            </div>
+
+            <div class="col-4 product" onclick="goToProduct({cat:'Home/ T-Shirt', name: 'darck Printed T-shirt', img: 'images/product-6.jpg', price: '$50.00', description: 'Description of Product 1.' })">
+                <a href="product-detail.html"><img src="images/product-6.jpg"></a>
+                <h4>Darck Printed T-shirt</h4>
                 <div class="rating">
                     <i class="fa fa-star"
                         aria-hidden="true"></i>
@@ -191,25 +255,12 @@
                     <i class="fa fa-star-o" aria-hidden="true"></i>
                 </div>
                 <p>$50.00</p>
+                <button class="add-to-cart"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Card</button>
             </div>
 
-            <div class="col-4">
-                <img src="images/product-6.jpg">
-                <h4>Red Printed T-shirt</h4>
-                <div class="rating">
-                    <i class="fa fa-star"
-                        aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star-o" aria-hidden="true"></i>
-                </div>
-                <p>$50.00</p>
-            </div>
-
-            <div class="col-4">
-                <img src="images/product-7.jpg">
-                <h4>Red Printed T-shirt</h4>
+            <div class="col-4 product" onclick="goToProduct({cat:'Home/ Socks', name: 'Sock', img: 'images/product-7.jpg', price: '$50.00', description: 'Description of Product 1.' })">
+                <a href="product-detail.html"><img src="images/product-7.jpg"></a>
+                <h4>Sock</h4>
                 <div class="rating">
                     <i class="fa fa-star"
                         aria-hidden="true"></i>
@@ -218,12 +269,13 @@
                     <i class="fa fa-star-half-o" aria-hidden="true"></i>
                     <i class="fa fa-star-o" aria-hidden="true"></i>
                 </div>
-                <p>$50.00</p>
+                <p>$25.00</p>
+                <button class="add-to-cart"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Card</button>
             </div>
 
-            <div class="col-4">
-                <img src="images/product-8.jpg">
-                <h4>Red Printed T-shirt</h4>
+            <div class="col-4 product" onclick="goToProduct({cat:'Home/ Watch', name: 'Darck Watch', img: 'images/product-8.jpg', price: '$300.00', description: 'Description of Product 1.' })">
+                <a href="product-detail.html"><img src="images/product-8.jpg"></a>
+                <h4>Darck watch</h4>
                 <div class="rating">
                     <i class="fa fa-star"
                         aria-hidden="true"></i>
@@ -233,13 +285,14 @@
                     <i class="fa fa-star-half-o" aria-hidden="true"></i>
 
                 </div>
-                <p>$50.00</p>
+                <p>$300.00</p>
+                <button class="add-to-cart"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Card</button>
             </div>
         </div>
         <div class="row">
-            <div class="col-4">
-                <img src="images/product-9.jpg">
-                <h4>Red Printed T-shirt</h4>
+            <div class="col-4 product" onclick="goToProduct({cat:'Home/ Watch', name: 'Blue Watch', img: 'images/product-9.jpg', price: '$300.00', description: 'Description of Product 1.' })">
+                <a href="product-detail.html"><img src="images/product-9.jpg"></a>
+                <h4>Blue Watch</h4>
                 <div class="rating">
                     <i class="fa fa-star"
                         aria-hidden="true"></i>
@@ -248,12 +301,13 @@
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star-o" aria-hidden="true"></i>
                 </div>
-                <p>$50.00</p>
+                <p>$300.00</p>
+                <button class="add-to-cart"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Card</button>
             </div>
 
-            <div class="col-4">
-                <img src="images/product-10.jpg">
-                <h4>Red Printed T-shirt</h4>
+            <div class="col-4 product" onclick="goToProduct({cat:'Home/ Shoes', name: 'Black and Red Shoes', img: 'images/product-10.jpg', price: '$200.00', description: 'Description of Product 1.' })">
+                <a href="product-detail.html"><img src="images/product-10.jpg"></a>
+                <h4>Black and Red Shoes</h4>
                 <div class="rating">
                     <i class="fa fa-star"
                         aria-hidden="true"></i>
@@ -262,12 +316,13 @@
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star-o" aria-hidden="true"></i>
                 </div>
-                <p>$50.00</p>
+                <p>$200.00</p>
+                <button class="add-to-cart"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Card</button>
             </div>
 
-            <div class="col-4">
-                <img src="images/product-11.jpg">
-                <h4>Red Printed T-shirt</h4>
+            <div class="col-4 product" onclick="goToProduct({cat:'Home/ Shoes', name: 'White Shoes ', img: 'images/product-11.jpg', price: '$200.00', description: 'Description of Product 1.' })">
+                <a href="product-detail.html"><img src="images/product-11.jpg"></a>
+                <h4>White Shoes</h4>
                 <div class="rating">
                     <i class="fa fa-star"
                         aria-hidden="true"></i>
@@ -276,12 +331,13 @@
                     <i class="fa fa-star-half-o" aria-hidden="true"></i>
                     <i class="fa fa-star-o" aria-hidden="true"></i>
                 </div>
-                <p>$50.00</p>
+                <p>$200.00</p>
+                <button class="add-to-cart"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Card</button>
             </div>
 
-            <div class="col-4">
-                <img src="images/product-12.jpg">
-                <h4>Red Printed T-shirt</h4>
+            <div class="col-4 product" onclick="goToProduct({cat:'Home/ Pants', name: 'Black Pants', img: 'images/product-12.jpg', price: '$80.00', description: 'Description of Product 1.' })">
+                <a href="product-detail.html"><img src="images/product-12.jpg"></a>
+                <h4>Black Pants</h4>
                 <div class="rating">
                     <i class="fa fa-star"
                         aria-hidden="true"></i>
@@ -291,7 +347,8 @@
                     <i class="fa fa-star-half-o" aria-hidden="true"></i>
 
                 </div>
-                <p>$50.00</p>
+                <p>$80.00</p>
+                <button class="add-to-cart"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Card</button>
             </div>
         </div>
 
@@ -306,14 +363,14 @@
                     <img src="images/exclusive.png" class="offer-img">
                 </div>
 
-                <div class="col-2">
+                <div class="col-2" onclick="goToProduct({cat:'Home/ Watch', name: 'Exclusively available on elevateFit', img: 'images/exclusive.png', price: '$200.00', description: 'Description of Product 1.' })">
                     <p>Exclusively available on elevateFit</p>
                     <h1>Smart Band 4</h1>
                     <small>
                         The Mi Smart Band 4 features a 39.9% larger (than Mi Band 3) AMOLED color full-touch display
                         with adjustable brightness, so everything is clear as can be
                     </small>
-                    <a href="" class="btn">Buy Now
+                    <a href="product-detail.html" class="btn">Buy Now
                         &#8594;</a>
 
                 </div>
@@ -479,26 +536,20 @@
     </div>
 
     <!-----------------JS----------------------->
-    <script>//---------------------------------------------------------------------------------
-       
-        function openProductDetail(name, price, image, description) {
-            const product = { name, price, image, description };
-            localStorage.setItem('selectedProduct', JSON.stringify(product));
-            window.location.href = 'product-detail.html';
-        }
-    
-        // Call this function when clicking on a product link
-        document.querySelectorAll('.col-4 a.btn').forEach((button, index) => {
-            button.addEventListener('click', (e) => {
-                e.preventDefault();
-                const product = e.currentTarget.closest('.col-4');
-                const name = product.querySelector('h4').textContent;
-                const price = product.querySelector('p').textContent;
-                const image = product.querySelector('img').src;
-                const description = "This is a detailed description of the product.";  // Customize per product
-                openProductDetail(name, price, image, description);
-            });
-        });</script>
+    <script src="js/script.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    const navTotalPrice = document.querySelector("nav .menu-bar li");
+
+    // Retrieve the saved total price from local storage
+    const savedTotalPrice = JSON.parse(localStorage.getItem("cartTotalPrice")) || 0;
+
+    // Display the total price in the navigation or designated area
+    navTotalPrice.textContent = `$${savedTotalPrice.toFixed(2)}`;
+    });
+
+    </script>
 
 
 </body>
