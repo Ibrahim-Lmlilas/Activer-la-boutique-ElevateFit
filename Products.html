@@ -43,7 +43,7 @@
 
                 <li>&#36;0.00</li>
                 <li><a href="cart.html" style="all: unset;"><i class="fas fa-shopping-cart"></i></a></li>
-
+    
             </ul>
 
             <i class="fa fa-bars"></i>
@@ -64,6 +64,8 @@
             </h2>
             
         </div>
+
+      <div style="display: flex; justify-content: space-around;">
         <div class="category-filter">
             <label for="categorySelect">Filter by Category:</label>
             <select id="productCategory">
@@ -75,19 +77,21 @@
             </select>
         </div>
         
+        
         <!-- filtre par prix -->
         <div class="col-md-4">
             <label for="rangePrice">Filter by prix <span id="updatedRange"></span> </label>
-            <input class="form-control" type="range" min="0" max="150" step="15" id="rangePrice">
+            <input class="form-control" type="range" min="0" max="200" step="10" id="rangePrice">
         </div>
+    </div>
     
 
         <div class="row">
 
 
-            <div class="col-4 product" data-category="tshirt" data-price="50" onclick="goToProduct({cat:'Home/ T-Shirt', name: 'Red Printed T-shirt', img: 'images/product-1.jpg', price: '$50.00', description: 'Description of Product 1.' })">
+            <div class="col-4 product" data-category="tshirt" data-price="80" onclick="goToProduct({cat:'Home/ T-Shirt', name: 'Red Printed T-shirt', img: 'images/product-1.jpg', price: '$80.00', description: 'Description of Product 1.' })">
                 <a href="product-detail.html"><img src="Images/product-1.jpg" alt="Red Printed T-shirt"></a>
-                <h4>Red Printed T-shirt</h4>
+                    <h4>Red Printed T-shirt</h4>
                 <div class="rating">
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
@@ -95,8 +99,8 @@
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star-o" aria-hidden="true"></i>
                 </div>
-                <p>$50.00</p>
-                <button class="add-to-cart"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Card</button>
+                <p>$80.00</p>
+                <button onclick="addToCart({name: 'Red Printed T-shirt', price: '$50.00'})" class="add-to-cart"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Card</button>
             </div>
 
             <div class="col-4 product" data-category="shoes" data-price="200" onclick="goToProduct({cat:'Home/ Shoes', name: 'Black Shoes', img: 'images/product-2.jpg', price: '$200.00', description: 'Description of Product 2.' })">
@@ -192,7 +196,7 @@
                 <button class="add-to-cart"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Card</button>
             </div>
 
-            <div class="col-4 product"data-category="accessories" data-price="300" onclick="goToProduct({cat:'HOME/ Watch', name: 'Black Watch', img: 'images/product-8.jpg', price: '$300.00', description: 'Description of Product 8.' })">
+            <div class="col-4 product"data-category="accessories" data-price="200" onclick="goToProduct({cat:'HOME/ Watch', name: 'Black Watch', img: 'images/product-8.jpg', price: '$200.00', description: 'Description of Product 8.' })">
                 <a href="product-detail.html"><img src="Images/product-8.jpg"></a>
                 <h4>Black Watch</h4>
                 <div class="rating">
@@ -203,11 +207,11 @@
                     <i class="fa fa-star-half-o" aria-hidden="true"></i>
 
                 </div>
-                <p>$300.00</p>
+                <p>$200.00</p>
                 <button class="add-to-cart"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Card</button>
             </div>
        
-            <div class="col-4 product" data-category="accessories" data-price="300" onclick="goToProduct({cat:'HOME/ Watch', name: 'Darck Blue Watch', img: 'images/product-9.jpg', price: '$300.00', description: 'Description of Product 9.' })">
+            <div class="col-4 product" data-category="accessories" data-price="200" onclick="goToProduct({cat:'HOME/ Watch', name: 'Darck Blue Watch', img: 'images/product-9.jpg', price: '$200.00', description: 'Description of Product 9.' })">
                 <a href="product-detail.html"><img src="Images/product-9.jpg"></a>
                 <h4>Darck Blue Watch</h4>
                 <div class="rating">
@@ -217,7 +221,7 @@
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star-o" aria-hidden="true"></i>
                 </div>
-                <p>$300.00</p>
+                <p>$200.00</p>
                 <button class="add-to-cart"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Card</button>
             </div>
 
@@ -341,8 +345,12 @@
     // Display the total price in the navigation or designated area
     navTotalPrice.textContent = `$${savedTotalPrice.toFixed(2)}`;
     });
-
+   
 </script>
+<script src="js/addCart.js"></script>
+<script src="js/script.js"></script>
+<script src="js/localStorage.js"></script>
+
 
 
 </body>
