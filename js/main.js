@@ -1,3 +1,4 @@
+
 /*-----------------ajouter le nombre de pieces et le prix sur nav------------------*/
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -46,7 +47,44 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+ /*---------------------filtre----------------------*/
 
+    // Selection des elements du DOM pour les filtres
+    const categorySelect = document.getElementById("categorySelect");
+    const maxPrice = document.getElementById("maxPrice");
+    const applyFilterButton = document.getElementById("applyFilter");
+    const products = document.querySelectorAll(".product");
+
+    // Afficher la valeur du prix max selectionnee
+        maxPrice.addEventListener("input", function () {
+        document.getElementById("maxPriceValue").textContent = `$${maxPrice.value}`;
+    });
+
+    // Fonction de filtrage
+    function applyFilter() {
+        const selectedCategory = categorySelect.value;
+        const selectedMaxPrice = parseFloat(maxPrice.value);
+
+        products.forEach((product) => {
+            // Recuperation de la categorie et du prix de chaque produit
+            const productCategory = product.getAttribute("data-category");
+            const productPrice = parseFloat(product.getAttribute("data-price"));
+
+            // Application des filtres : categorie et prix max
+            const categoryMatch = selectedCategory === "all" || productCategory === selectedCategory;
+            const priceMatch = productPrice <= selectedMaxPrice;
+
+            // Affichage ou masquage du produit en fonction des filtres
+            if (categoryMatch && priceMatch) {
+                product.style.display = "block";
+            } else {
+                product.style.display = "none";
+            }
+        });
+    }
+
+    // Ecouteur pour appliquer le filtre lors du clic
+    applyFilterButton.addEventListener("click", applyFilter);
 
 
    

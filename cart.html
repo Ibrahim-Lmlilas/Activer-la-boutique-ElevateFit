@@ -1,9 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="Online Shopping Platform,Best Online Store,E-commerce Solutions,Digital Shopping Experience,Affordable Products,One-stop Shop,Weekly Deals,Featured Products,Shop by Category,Seasonal Sale,24/7 Customer Support,Track Your Order,Satisfaction Guaranteed,Special Offers,Flash Sale">
+        <meta name="description" content="Discover the best deals on top-quality products at our online store! Shop electronics, fashion, home decor, and more. Enjoy fast delivery, secure payment, and exclusive offers. Your one-stop shop for all your needs.">
+        <meta name="author" content="Ayoub Fetti">
         <title>elevateFit</title>
         <link rel="stylesheet" href="css/style.css"> 
         <link rel="stylesheet" href="css/detail.css">
@@ -20,25 +22,39 @@
     <header class="header-class">
       
         <nav id="nav">
-          
-          <a href="index.html"><img src="images/logo-white.png" class="logo"></a>
-          
-          <ul class="menu-bar-side">
-            <li><a href="index.html" style=" all: unset;">Home</a></li>
-            <li><a href="Products.html" style=" all: unset;">Shope</a></li>
-            <li><a href="#" style=" all: unset;">about</a></li>
-            <li><a href="#" style=" all: unset;">contact us</a></li>
-            <li><a href="#" style=" all: unset;">Wishlist</a></li>
-        </ul>
 
-        <ul class="menu-bar">
 
-            <li>&#36;0</li>
-            <li><a href="cart.html" style="all: unset;"><i class="fas fa-shopping-cart"></i></a></li>
+            <a href="index.html"><img src="images/logo-white.png" class="logo" alt="log"></a>
 
-        </ul>
-          
+            <ul class="menu-bar-side">
+                <li><a href="index.html" style=" all: unset;">Home</a></li>
+                <li><a href="Products.html" style=" all: unset;">Shop</a></li>
+                <li><a href="#" style=" all: unset;">about</a></li>
+                <li><a href="#" style=" all: unset;">contact us</a></li>
+                <li><a href="#" style=" all: unset;">Wishlist</a></li>
+            </ul>
+
+            <ul class="menu-bar">
+
+                <li>&#36;0.00</li>
+                <li><a href="cart.html" style="all: unset;"><i class="fas fa-shopping-cart"></i></a></li>
+            </ul>  
+            
+            <div class="burger-menu">
+                <div class="burger-icon">&#9776;</div>
+            </div>
         </nav>
+        <div class="side-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Products.html">Shop</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Wishlist</a></li>
+                <li class="total-price">Total: $0.00</li>
+                <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+            </ul>
+        </div>
    
   </header>
 
@@ -52,16 +68,24 @@
             <th>Quantity</th>
             <th>Subtotal</th>
         </tr>
-        <tbody id="cart-items"></tbody>
+        <tbody id="cart-items">
+      
+            <!--ici les produits chosies seront ajouter automatiquement-->
+      
+
+        </tbody>
     </table>
 
     <div class="total-price">
       
         <table>
             <tr>
-                <td>Total</td>
+                <td>
+                    Total
+                </td>
                 <td>$200.00</td>
             </tr>
+
         </table>
 
     </div>
@@ -80,8 +104,8 @@
                     <h3>Download Our App</h3>
                     <p>Download App for Android and iOS mobile phone.</p>
                     <div class="app-logo">
-                        <img src="images/play-store.png">
-                        <img src="images/app-store.png">
+                        <img src="images/play-store.png" alt="footer">
+                        <img src="images/app-store.png" alt="footer">
                     </div>
                 </div>
                 <div class="footer-col-2">
@@ -117,66 +141,12 @@
         })
      </script>
    </footer>
-   <!----------------JS-------------------->
-    <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // Récupérer les produits du localStorage
-        const cart = JSON.parse(localStorage.getItem("cart")) || [];
-        const cartContainer = document.getElementById("cart-items");
-        let totalPrice = 0;
-
-        // Afficher chaque produit
-        cart.forEach(product => {
-            const subtotal = product.price * product.quantity;
-            totalPrice += subtotal;
-
-            const productHTML = `
-                <tr>
-                    <td>
-                        <div class="cart-info">
-                            <img src="${product.image}" alt="${product.name}">
-                            <div>
-                                <p>${product.name}</p>
-                                <small>price: $${product.price}</small><br>
-                                <a href="#" onclick="removeFromCart('${product.name}')">Remove</a>
-                            </div>
-                        </div>
-                    </td>
-                    <td><input type="number" value="${product.quantity}" min="1" onchange="updateQuantity('${product.name}', this.value)"></td>
-                    <td>$${subtotal.toFixed(2)}</td>
-                </tr>
-            `;
-            cartContainer.innerHTML += productHTML;
-        });
-
-        // Mettre à jour le total
-        document.querySelector(".total-price table td:last-child").textContent = `$${totalPrice.toFixed(2)}`;
-    });
-
-    // Fonction pour supprimer un produit
-    function removeFromCart(productName) 
-    {
-        let cart = JSON.parse(localStorage.getItem("cart")) || [];
-        cart = cart.filter(item => item.name !== productName);
-        localStorage.setItem("cart", JSON.stringify(cart));
-        location.reload();
-    }
-
-    // Fonction pour mettre à jour la quantité
-    function updateQuantity(productName, newQuantity) 
-    {
-        let cart = JSON.parse(localStorage.getItem("cart")) || [];
-        const product = cart.find(item => item.name === productName);
-        if (product) {
-            product.quantity = parseInt(newQuantity);
-            localStorage.setItem("cart", JSON.stringify(cart));
-            location.reload();
-        }
-    }
-    </script>
+    <!----------------JS-------------------->
    <script src="js/script.js"></script>
-   <script src="js/addCart.js"></script>
-   <script src="js/localStorage.js"></script>
+   <script src="js/main.js"></script>
+   <script src="js/panier.js"></script>
+   <script src="js/burger_menu.js"></script>
+
 
 </body>
 </html>

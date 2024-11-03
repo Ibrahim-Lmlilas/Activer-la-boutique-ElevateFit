@@ -5,8 +5,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Online Shopping Platform,Best Online Store,E-commerce Solutions,Digital Shopping Experience,Affordable Products,One-stop Shop,Weekly Deals,Featured Products,Shop by Category,Seasonal Sale,24/7 Customer Support,Track Your Order,Satisfaction Guaranteed,Special Offers,Flash Sale">
+    <meta name="description" content="Discover the best deals on top-quality products at our online store! Shop electronics, fashion, home decor, and more. Enjoy fast delivery, secure payment, and exclusive offers. Your one-stop shop for all your needs.">
+    <meta name="author" content="Ayoub Fetti">
     <!--we have added this view port tag and set initial scale to 1 so that our side shoudl be adjustable according to different devices especially for mobile devices-->
-    <title>elevateFit | The #1 Ecommerce Website </title>
+    <title>elevateFit</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/banner.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
@@ -26,32 +29,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <!--- owl carsoul ---->
-    <style>
-        .off-screen-menu{
-            background-color: black;
-            color: azure;
-            height: 100vh;
-            width: 100%;
-            max-width: 450px;
-            position: fixed;
-            top: 0;
-            right: -450px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            margin-bottom: 15px;
-            font-size: 1.5rem;
-            gap: 20px;
-            text-transform: uppercase;
-            z-index: 1;
-            transition: .3s ease;
-        }
-        .off-screen-menu.action{
-            right: 0;
-        }
-    </style>
+   
 </head>
 
 <body>
@@ -60,53 +38,58 @@
     <header>
 
         <nav id="nav">
-            <a href="index.html"><img src="images/logo-white.png" class="logo" alt="Logo"></a>
-        
+
+
+            <a href="index.html"><img src="images/logo-white.png" class="logo" alt="log"></a>
+
             <ul class="menu-bar-side">
-                <li><a href="index.html" style="all: unset;">Home</a></li>
-                <li><a href="products.html" style="all: unset;">Shop</a></li>
-                <li><a href="about.html" style="all: unset;">About</a></li>
-                <li><a href="contact.html" style="all: unset;">Contact Us</a></li>
-                <li><a href="wishlist.html" style="all: unset;">Wishlist</a></li>
+                <li><a href="index.html" style=" all: unset;">Home</a></li>
+                <li><a href="Products.html" style=" all: unset;">Shop</a></li>
+                <li><a href="#" style=" all: unset;">about</a></li>
+                <li><a href="#" style=" all: unset;">contact us</a></li>
+                <li><a href="#" style=" all: unset;">Wishlist</a></li>
             </ul>
-        
+
             <ul class="menu-bar">
 
                 <li>&#36;0.00</li>
                 <li><a href="cart.html" style="all: unset;"><i class="fas fa-shopping-cart"></i></a></li>
             </ul>  
-        </nav>
-        
             
-        
-        <!-- Menu off-screen -->
-        <div class="off-screen-menu">
-            <ul class="menu-bar-side">
+            <div class="burger-menu">
+                <div class="burger-icon">&#9776;</div>
+            </div>
+        </nav>
+        <div class="side-menu">
+            <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="products.html">Shop</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="wishlist.html">Wishlist</a></li>
+                <li><a href="Products.html">Shop</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Wishlist</a></li>
+                <li class="total-price">Total: $0.00</li>
+                <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a></li>
             </ul>
         </div>
+       
         
 
 
-        <div class="content" >
+        <div class="content">
 
             <h2 class="heading">
                 Raining Offers For Hot Summer!
             </h2>
 
-            <h4 style="color: var(--orange);">
+            <h4 >
                 25% Off On All Products
             </h4>
             <a href="Products.html" >
             <button class="shopNow" style="border-radius: 20px;">
-                shop now
+               shop now
             </button>
-           </a>
-            <button class="findMore" style="border-radius: 20px;">
+        </a>
+            <button class="findMore"  style="border-radius: 20px;">
                 find more
             </button>
 
@@ -114,16 +97,6 @@
 
     </header>
     <!--- end header --->
-    <script>
-        const hamMenu = document.getElementById("bar");
-const offScreenMenu = document.querySelector('.off-screen-menu');
-
-hamMenu.addEventListener('click', () => {
-    // Toggle the 'action' class on the off-screen menu
-    offScreenMenu.classList.toggle('action');
-});
-
-    </script>
 
     <!--Featured categories-->
   
@@ -136,13 +109,13 @@ hamMenu.addEventListener('click', () => {
 
                 <!--3 columns for 3 images-->
                 <div class="col-3">
-                    <img src="images/category-1.jpg" alt="">
+                    <img src="images/category-1.jpg" alt="image">
                 </div>
                 <div class="col-3">
-                    <img src="images/category-2.jpg" alt="">
+                    <img src="images/category-2.jpg" alt="image">
                 </div>
                 <div class="col-3">
-                    <img src="images/category-3.jpg" alt="">
+                    <img src="images/category-3.jpg" alt="image">
                 </div>
 
             </div>
@@ -160,8 +133,8 @@ hamMenu.addEventListener('click', () => {
          
 
             
-            <div class="col-4 product" onclick="goToProduct({cat:'Home/ T-Shirt', name: 'Red Printed T-shirt', img: 'images/product-1.jpg', price: '$80.00', description: 'Description of Product 1.' })">
-                <a href="product-detail.html"><img src="images/product-1.jpg"></a>
+            <div class="col-4 product" onclick="goToProduct({cat:'Home/ T-Shirt', name: 'Red Printed T-shirt', img: 'images/product-1.jpg', price: '$50.00', description: 'Description of Product 1.' })">
+                <a href="product-detail.html"><img src="images/product-1.jpg" alt="produit"></a>
                 <a href="product-detail.html">
                     <h4>Red Printed T-shirt</h4>
                 </a>
@@ -173,12 +146,12 @@ hamMenu.addEventListener('click', () => {
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star-o" aria-hidden="true"></i>
                 </div>
-                <p>$80.00</p>
+                <p>$50.00</p>
                 <button class="add-to-cart"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Card</button>
             </div>
 
             <div class="col-4 product" onclick="goToProduct({cat:'Home/ shoes', name: 'Black shoes', img: 'images/product-2.jpg', price: '$200.00', description: 'Description of Product 1.' })">
-                <a href="product-detail.html"><img src="images/product-2.jpg"></a>
+                <a href="product-detail.html"><img src="images/product-2.jpg" alt="produit"></a>
                 <h4>Black shoes</h4>
                 <div class="rating">
                     <i class="fa fa-star"
@@ -193,7 +166,7 @@ hamMenu.addEventListener('click', () => {
             </div>
 
             <div class="col-4 product" onclick="goToProduct({cat:'Home/ Pants', name: 'Gray Pant', img: 'images/product-3.jpg', price: '$80.00', description: 'Description of Product 1.' })">
-            <a href="product-detail.html"><img src="images/product-3.jpg"></a>
+            <a href="product-detail.html"><img src="images/product-3.jpg" alt="produit"></a>
                 <h4>Gray Pant</h4>
                 <div class="rating">
                     <i class="fa fa-star"
@@ -207,8 +180,8 @@ hamMenu.addEventListener('click', () => {
                 <button class="add-to-cart"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Card</button>
             </div>
 
-            <div class="col-4 product" onclick="goToProduct({cat:'Home/ T-Shirt', name: 'Dark Printed T-shirt', img: 'images/product-4.jpg', price: '$50.00', description: 'Description of Product 1.' })">
-                <a href="product-detail.html"><img src="images/product-4.jpg"></a>
+            <div class="col-4 product" onclick="goToProduct({cat:'Home/ T-Shirt', name: 'Darck Printed T-shirt', img: 'images/product-4.jpg', price: '$50.00', description: 'Description of Product 1.' })">
+                <a href="product-detail.html"><img src="images/product-4.jpg" alt="produit"></a>
                 <h4>Darck Printed T-shirt</h4>
                 <div class="rating">
                     <i class="fa fa-star"
@@ -230,7 +203,7 @@ hamMenu.addEventListener('click', () => {
         <div class="row">
 
             <div class="col-4 product" onclick="goToProduct({cat:'Home/ Shoes', name: 'White Shoes', img: 'images/product-5.jpg', price: '$200.00', description: 'Description of Product 1.' })">
-                <a href="product-detail.html"><img src="images/product-5.jpg"></a>
+                <a href="product-detail.html"><img src="images/product-5.jpg" alt="produit"></a>
                 <h4>White Shoes</h4>
                 <div class="rating">
                     <i class="fa fa-star"
@@ -245,7 +218,7 @@ hamMenu.addEventListener('click', () => {
             </div>
 
             <div class="col-4 product" onclick="goToProduct({cat:'Home/ T-Shirt', name: 'darck Printed T-shirt', img: 'images/product-6.jpg', price: '$50.00', description: 'Description of Product 1.' })">
-                <a href="product-detail.html"><img src="images/product-6.jpg"></a>
+                <a href="product-detail.html"><img src="images/product-6.jpg" alt="produit"></a>
                 <h4>Darck Printed T-shirt</h4>
                 <div class="rating">
                     <i class="fa fa-star"
@@ -260,7 +233,7 @@ hamMenu.addEventListener('click', () => {
             </div>
 
             <div class="col-4 product" onclick="goToProduct({cat:'Home/ Socks', name: 'Sock', img: 'images/product-7.jpg', price: '$50.00', description: 'Description of Product 1.' })">
-                <a href="product-detail.html"><img src="images/product-7.jpg"></a>
+                <a href="product-detail.html"><img src="images/product-7.jpg" alt="produit"></a>
                 <h4>Sock</h4>
                 <div class="rating">
                     <i class="fa fa-star"
@@ -274,8 +247,8 @@ hamMenu.addEventListener('click', () => {
                 <button class="add-to-cart"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Card</button>
             </div>
 
-            <div class="col-4 product" onclick="goToProduct({cat:'Home/ Watch', name: 'Darck Watch', img: 'images/product-8.jpg', price: '$200.00', description: 'Description of Product 1.' })">
-                <a href="product-detail.html"><img src="images/product-8.jpg"></a>
+            <div class="col-4 product" onclick="goToProduct({cat:'Home/ Watch', name: 'Darck Watch', img: 'images/product-8.jpg', price: '$300.00', description: 'Description of Product 1.' })">
+                <a href="product-detail.html"><img src="images/product-8.jpg" alt="produit"></a>
                 <h4>Darck watch</h4>
                 <div class="rating">
                     <i class="fa fa-star"
@@ -286,13 +259,13 @@ hamMenu.addEventListener('click', () => {
                     <i class="fa fa-star-half-o" aria-hidden="true"></i>
 
                 </div>
-                <p>$200.00</p>
+                <p>$300.00</p>
                 <button class="add-to-cart"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Card</button>
             </div>
         </div>
         <div class="row">
-            <div class="col-4 product" onclick="goToProduct({cat:'Home/ Watch', name: 'Blue Watch', img: 'images/product-9.jpg', price: '$200.00', description: 'Description of Product 1.' })">
-                <a href="product-detail.html"><img src="images/product-9.jpg"></a>
+            <div class="col-4 product" onclick="goToProduct({cat:'Home/ Watch', name: 'Blue Watch', img: 'images/product-9.jpg', price: '$300.00', description: 'Description of Product 1.' })">
+                <a href="product-detail.html"><img src="images/product-9.jpg" alt="produit"></a>
                 <h4>Blue Watch</h4>
                 <div class="rating">
                     <i class="fa fa-star"
@@ -302,12 +275,12 @@ hamMenu.addEventListener('click', () => {
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star-o" aria-hidden="true"></i>
                 </div>
-                <p>$200.00</p>
+                <p>$300.00</p>
                 <button class="add-to-cart"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Card</button>
             </div>
 
             <div class="col-4 product" onclick="goToProduct({cat:'Home/ Shoes', name: 'Black and Red Shoes', img: 'images/product-10.jpg', price: '$200.00', description: 'Description of Product 1.' })">
-                <a href="product-detail.html"><img src="images/product-10.jpg"></a>
+                <a href="product-detail.html"><img src="images/product-10.jpg" alt="produit"></a>
                 <h4>Black and Red Shoes</h4>
                 <div class="rating">
                     <i class="fa fa-star"
@@ -322,7 +295,7 @@ hamMenu.addEventListener('click', () => {
             </div>
 
             <div class="col-4 product" onclick="goToProduct({cat:'Home/ Shoes', name: 'White Shoes ', img: 'images/product-11.jpg', price: '$200.00', description: 'Description of Product 1.' })">
-                <a href="product-detail.html"><img src="images/product-11.jpg"></a>
+                <a href="product-detail.html"><img src="images/product-11.jpg" alt="produit"></a>
                 <h4>White Shoes</h4>
                 <div class="rating">
                     <i class="fa fa-star"
@@ -337,7 +310,7 @@ hamMenu.addEventListener('click', () => {
             </div>
 
             <div class="col-4 product" onclick="goToProduct({cat:'Home/ Pants', name: 'Black Pants', img: 'images/product-12.jpg', price: '$80.00', description: 'Description of Product 1.' })">
-                <a href="product-detail.html"><img src="images/product-12.jpg"></a>
+                <a href="product-detail.html"><img src="images/product-12.jpg" alt="produit"></a>
                 <h4>Black Pants</h4>
                 <div class="rating">
                     <i class="fa fa-star"
@@ -361,7 +334,7 @@ hamMenu.addEventListener('click', () => {
             <div class="row">
 
                 <div class="col-2">
-                    <img src="images/exclusive.png" class="offer-img">
+                    <img src="images/exclusive.png" class="offer-img" alt="produit">
                 </div>
 
                 <div class="col-2" onclick="goToProduct({cat:'Home/ Watch', name: 'Exclusively available on elevateFit', img: 'images/exclusive.png', price: '$200.00', description: 'Description of Product 1.' })">
@@ -402,7 +375,7 @@ hamMenu.addEventListener('click', () => {
                         <i class="fa fa-star" aria-hidden="true"></i>
                         <i class="fa fa-star-half-o" aria-hidden="true"></i>
                     </div>
-                    <img src="images/user-1.png">
+                    <img src="images/user-1.png" alt="image">
                     <h3>Sean Parker</h3>
 
                 </div>
@@ -423,7 +396,7 @@ hamMenu.addEventListener('click', () => {
                         <i class="fa fa-star" aria-hidden="true"></i>
                         <i class="fa fa-star-half-o" aria-hidden="true"></i>
                     </div>
-                    <img src="images/user-2.png">
+                    <img src="images/user-2.png" alt="produit">
                     <h3>Mike Smith</h3>
 
                 </div>
@@ -443,7 +416,7 @@ hamMenu.addEventListener('click', () => {
                         <i class="fa fa-star" aria-hidden="true"></i>
                         <i class="fa fa-star-half-o" aria-hidden="true"></i>
                     </div>
-                    <img src="images/user-3.png">
+                    <img src="images/user-3.png" alt="produit">
                     <h3>Mable Joe</h3>
 
                 </div>
@@ -458,26 +431,26 @@ hamMenu.addEventListener('click', () => {
         <div class="small container">
             <div class="row">
                 <div class="col-5">
-                    <img src="images/logo-godrej.png">
+                    <img src="images/logo-godrej.png" alt="produit">
                 </div>
 
                 <div class="col-5">
-                    <img src="images/logo-oppo.png">
-                </div>
-
-
-                <div class="col-5">
-                    <img src="images/logo-coca-cola.png">
+                    <img src="images/logo-oppo.png" alt="produit">
                 </div>
 
 
                 <div class="col-5">
-                    <img src="images/logo-paypal.png">
+                    <img src="images/logo-coca-cola.png" alt="produit">
                 </div>
 
 
                 <div class="col-5">
-                    <img src="images/logo-philips.png">
+                    <img src="images/logo-paypal.png" alt="produit">
+                </div>
+
+
+                <div class="col-5">
+                    <img src="images/logo-philips.png" alt="produit">
                 </div>
 
             </div>
@@ -496,14 +469,14 @@ hamMenu.addEventListener('click', () => {
 
                   
                     <div class="app-logo">
-                        <img src="images/play-store.png">
-                        <img src="images/app-store.png">
+                        <img src="images/play-store.png" alt="footer">
+                        <img src="images/app-store.png" alt="footer">
                     </div>
 
                 </div>
 
                 <div class="footer-col-2">
-                    <img src="images/logo-white.png">
+                    <img src="images/logo-white.png" alt="footer">
                     <p>Our purpose is To Sustainably Make the Pleasure and Benefits of Sports Accessible to the Many.
                     </p>
                 </div>
@@ -537,25 +510,10 @@ hamMenu.addEventListener('click', () => {
     </div>
 
     <!-----------------JS----------------------->
+    
     <script src="js/script.js"></script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-    const navTotalPrice = document.querySelector("nav .menu-bar li");
-
-    // Retrieve the saved total price from local storage
-    const savedTotalPrice = JSON.parse(localStorage.getItem("cartTotalPrice")) || 0;
-
-    // Display the total price in the navigation or designated area
-    navTotalPrice.textContent = `$${savedTotalPrice.toFixed(2)}`;
-    });
-
-    </script>
-    <script src="js/menuburger.js"></script>
-    <script src="js/addCart.js"></script>
-    <script src="js/localStorage.js"></script>
-
-
+    <script src="js/main.js"></script>
+    <script src="js/burger_menu.js"></script>
 </body>
 
 </html>
