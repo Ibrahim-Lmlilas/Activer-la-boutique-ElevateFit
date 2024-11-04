@@ -1,4 +1,3 @@
-
 *{                              /* "*" is used for all elements in your website*/
     margin:0;               
     padding:0;
@@ -7,6 +6,30 @@
 }
 body{
     font-family: 'Poppins', sans-serif;
+}
+
+
+/* Style de base pour le bouton */
+
+.add-to-cart {
+    
+    padding: 10px 20px;
+    background-color: #a74828; /* Couleur de fond initiale */
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ;
+}
+
+
+
+.ff{
+
+    display: flex;
+    justify-content: space-around;
+
 }
 
 .navbar{
@@ -48,12 +71,15 @@ p{
     flex-wrap: wrap;/*wrap place single line or multi lines in given space.*/ 
     justify-content: space-around;/*"Display the flex items with space before, between, and after the lines:"*/
 }
+
+
 .col-2{
     flex-basis: 50%;/*divide it into haif*/
     min-width: 300px;
 }
+
 .col-2 img{
-    max-width: 100%;
+    max-width: 65%;
     padding: 50px 0px;/*top bottom 50, left right 0*/
 }
 .col-2 h1{
@@ -89,14 +115,6 @@ p{
 .categories{
     margin: 70px 0px;
 }
-.category-filter{
-    padding-bottom: 20px;
-    margin-left: 19px;
-}
-.Price-filter{
-    padding-bottom: 30px;
-    
-}
 .col-3{
     flex-basis: 30%;/*30% for each image*/
     min-width: 250px;/*images should have min width of 250 px*/
@@ -108,12 +126,11 @@ p{
 /*featured products*/
 /*small container edit whole section consist of rows*/
 .small container{
+    
     max-width: 1080px;
     margin:auto;/*make images in center*/
     padding-left: 25px;
     padding-right: 25px;
-
-    
 }
 /*col-4 will edit col of images*/
 .col-4{
@@ -235,7 +252,6 @@ small{
     color: #8a8a8a;/*text color*/
     font-size: 14px;
     padding: 60px 0 20px;
-    margin-top: 200px;
 }
 .footer p{
     color: #8a8a8a;/*paragraphs color in class footer*/
@@ -284,13 +300,45 @@ ul{
     color: #fff;
 }
 
+/*-----------media query for menu-------------*/
 
-/*----------------------------------------------------*/
+.menu-icon{
+    width: 28px;/*width of menu icon image*/
+    margin-left: 20px;
+    display: none;/*initially menu icon image will not be visible on any screen*/
+}
+/*we have to display menu icon for small screens only and hide it for larger screens*/
 
+/*menu icon will be visible for width of page less than 800px, above 800px or larger screen it will not be visible and we get navbar */
+@media only screen and (max-width:800px){
+    nav ul{/*for whole dropdown menu chart*/
+        /* position: absolute;
+        top: 70px;
+        left: 0;
+        background: #333;
+        width: 100%; */
+        /* overflow: hidden;before applying this, we were getting menu links open, so to clipped or close them and to work them only when clicked, we use overflow hidden */
+        /* transition: max-Height 0.5s;this will make dropdown menu to open with little bit delay and make it stylish */
+        display: inline-block;
+        list-style-type: none;
+   
+    }
+    nav ul li{/*for home contacts etc*/
+        display: block;
+        margin-right: 50px;
+        margin-top: 10px;
+        margin-bottom: 10px;
 
+    }
+    nav ul li a{/*dropdown menu link color would be white*/
+        color: #fff;
+    }
+    .menu-icon{/*we again call menu icon in smaller screen, before smaller screen, we set display none, means initially it was not visible for any screen, but now it will be visible for smaller screens as we set display to block*/
+        display:block;
+        cursor: pointer; 
+    }
 
-
-
+}
 /*All prodcuts page*/
 .row-2{
     justify-content: space-between;/*create some space heading and selection panel*/
@@ -360,7 +408,7 @@ input:focus{
 }
 .small-img-row{
     display:flex;/*make all 4 images flexible*/
-    /* width: 46em; */
+    width: 46em;
     justify-content: space-between;/*this will make all 4 images to take equal available space in single line without any gap, mean 25% each col, and to place gap between each col, we call col below and made 24% so to have a gap*/
 }
 .small-img-col{
@@ -401,7 +449,7 @@ td input{
 }
 td a{
     color: #ff523b;
-    font-size: 12px;
+    ffont-size: 12px;
 }
 td img{
     width: 80px;
@@ -415,8 +463,7 @@ td small{
 
 .total-price{
     display: flex;
-    justify-content: flex-start;/*put content with max width at the end, if flex start, then put content at start with max width as we mentioned max width below*/
-    color: #fff;
+    justify-content: flex-end;/*put content with max width at the end, if flex start, then put content at start with max width as we mentioned max width below*/
 }
 .total-price table{
     border-top: 3px solid #ff523b;
@@ -500,45 +547,49 @@ form a{
     transform: translateX(100px);
     transition: transform 1s;
 }
-#applyFilter{
-    margin-left: 20px; 
-    padding: 10px; 
-    border-radius: 15px; 
-    background-color:#ff523b;
-    cursor: pointer;
+
+.cartt{
+    align-content: center;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.cartt h4{
+    color:#fff ;
+    background-color: #ff523b;
+    margin:15px 0 15px 0 ;
+}
+
+
+.cart-item {
+    display: flex;
+    align-items: center;
+     margin-bottom: 10px; 
+    }
+ .cart-item img { 
+    margin-right: 10px; 
+}
+ .cart-item p { 
+    margin: 0 10px; 
+}
+ .total { 
+    font-weight: bold;
+     margin-top: 20px; 
+       }
+ .quantity-input { 
+    width: 50px; 
+}
+ .remove-btn { 
+    color: red; 
+    cursor: pointer; 
+    margin-left: 10px; 
+}
+
+.btn-checkout{
+    background-color: #ff523b;
     color: #fff;
-    transition: transform 0.3s ease;
+    padding: 10px 20px;
+    margin-left: 1000px
 }
-#applyFilter:hover{
-    background-color:transparent;
-    cursor: pointer;
-    color: #000;
-    transform: scale(1.1);
-    
-
-}
-input[type="range"]{
-    width: 150px; /* Longueur du curseur */
-    height: 10px; /* Hauteur du curseur */
-    background: #ddd; /* Couleur de fond de la barre */
-    border-radius: 5px; /* Coins arrondis */
-    outline: none;
-    cursor: pointer;
-        
-}
-
-.small-container {
-    max-width: 1080px;
-    margin: auto;
-    margin-top: auto;
-    padding-left: 25px;
-    padding-right: 25px;
-}
-
-
-
-
-
 
 
 
@@ -571,296 +622,133 @@ input[type="range"]{
     }
 
 }
-/* style pour add to cart hover */
-.product {
+/* Existing styles */
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .menu-bar-side {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        padding: 20px;
+    }
+
+    .menu-bar-side.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        background-color: white;
+    }
+
+    .col-2, .col-3, .col-4 {
+        flex: 100%;
+        max-width: 100%;
+    }
+
+    .offer .row {
+        flex-direction: column;
+    }
+
+    .footer .row {
+        flex-direction: column;
+    }
+
+    .footer-col-1, .footer-col-2, .footer-col-3, .footer-col-4 {
+        flex-basis: 100%;
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header .row {
+        text-align: center;
+    }
+
+    .col-2, .col-3, .col-4 {
+        flex-basis: 100%;
+    }
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+tfoot td {
+    font-weight: bold;
+}
+
+.cart-item img {
+    width: 50px;
+}
+
+
+/* Add to your existing CSS */
+header nav {
+    display: flex;
+    align-items: center;
     position: relative;
 }
 
-.add-to-cart {
-    display: none; 
-    position: absolute;
-    bottom: 100px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 10px 20px;
-    background-color: #ff6f61; 
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    text-align: center;
+header nav img.logo {
+    height: 40px;
+    margin-right: 20px;
 }
 
-.add-to-cart i {
-    margin-right: 5px;
-}
-
-.product:hover .add-to-cart {
-    display: inline-flex; /* Afficher au survol */
-}
-.cart-main{
-    max-width: 80%;
-    margin: auto;
-    margin-top: 20px;
-}
-
-/* style pour button de panier */
-.Checkout-bouton{
-    background-color: #ff523b;
-    color: #fff;
-    border: none;
-    padding: 10px 10px;
-    border-radius: 10px;
-    cursor: pointer;
-}
-.Checkout-bouton:hover{
-    font-size: 15PX;
-}
-
-.div-button{
+header nav .menu-bar {
+    margin-left: auto;
     display: flex;
-    justify-content: right;
-    margin-top: 30px;
-    margin-right: 15px;
-}
-
-
-
-
-.online-filtre{
-    display: flex;
-    justify-content: center;
-}
-
-
-.off-screen-menu {
-    display: none; /* Hide by default */
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: white; /* Change as needed */
-    z-index: 1000; /* Make sure it appears above other elements */
-}
-
-.off-screen-menu.active {
-    display: block; /* Show when active */
-}    
-
-
-/* Base Responsive Styles */
-
-/* Mobile First Approach */
-@media screen and (max-width: 768px) {
-    /* Navigation */
-    nav {
-      padding: 10px;
-    }
-  
-    .menu-bar-side {
-      display: none; /* Hide regular menu on mobile */
-    }
-  
-    .burger-menu {
-      display: block; /* Show burger menu on mobile */
-    }
-  
-    .logo {
-      width: 100px; /* Smaller logo for mobile */
-    }
-  
-    /* Header Content */
-    .content {
-      padding: 20px;
-      text-align: center;
-    }
-  
-    .heading {
-      font-size: 24px;
-    }
-  
-    /* Product Grid */
-    .col-4 {
-      flex-basis: 100%; /* Full width on mobile */
-      margin: 10px 0;
-    }
-  
-    /* Categories */
-    .col-3 {
-      flex-basis: 100%;
-      margin: 10px 0;
-    }
-  
-    /* Offer Section */
-    .offer .col-2 {
-      flex-basis: 100%;
-      text-align: center;
-    }
-  
-    .offer-img {
-      padding: 20px;
-    }
-  
-    /* Footer */
-    .footer-col-1,
-    .footer-col-2,
-    .footer-col-3,
-    .footer-col-4 {
-      flex-basis: 100%;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-  }
-  
-  /* Tablet Styles */
-  @media screen and (min-width: 769px) and (max-width: 1024px) {
-    .col-4 {
-      flex-basis: 45%; /* Two products per row */
-    }
-  
-    .col-3 {
-      flex-basis: 45%;
-    }
-  
-    .offer .col-2 {
-      flex-basis: 50%;
-    }
-  }
-  
-  /* Larger Screens */
-  @media screen and (min-width: 1025px) {
-    .container {
-      max-width: 1300px;
-      margin: auto;
-    }
-  
-    .col-4 {
-      flex-basis: 23%; /* Four products per row */
-    }
-  
-    .col-3 {
-      flex-basis: 30%;
-    }
-  }
-  
-  /* Common Responsive Elements */
-  .responsive-img {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  /* Flexible Grid System */
-  .row {
-    display: flex;
-    flex-wrap: wrap;
+    align-items: center;
     gap: 20px;
-    padding: 0 15px;
-  }
-  
-  /* Responsive Typography */
-  @media screen and (max-width: 768px) {
-    h1 { font-size: 24px; }
-    h2 { font-size: 20px; }
-    h3 { font-size: 18px; }
-    p { font-size: 14px; }
-  }
-  
-  /* Responsive Navigation */
-  .side-menu {
-    position: fixed;
-    top: 0;
-    right: -250px;
-    width: 250px;
-    height: 100%;
-    background: #fff;
-    transition: 0.3s;
-    z-index: 1000;
-  }
-  
-  .side-menu.active {
-    right: 0;
-  }
-  
-  /* Responsive Buttons */
-  .btn {
-    padding: 8px 16px;
-    font-size: 14px;
-  }
-  
-  @media screen and (min-width: 768px) {
-    .btn {
-      padding: 10px 20px;
-      font-size: 16px;
+}
+
+@media (min-width: 801px) {
+    header nav .fa-bars,
+    header nav .fa-remove {
+        display: none;
     }
-  }
-  
-  /* Responsive Cart */
-  @media screen and (max-width: 768px) {
-    .cart-info p {
-      display: none;
+
+    header nav .menu-bar-side {
+        display: flex;
+        gap: 20px;
     }
-    
-    .cart-info small {
-      display: block;
+}
+
+@media (min-width: 801px) {
+    .mobile-cart {
+        display: none;
     }
-  }
-  
-  /* Responsive Search */
-  .search-box {
-    width: 100%;
-    max-width: 300px;
-    margin: 10px auto;
-  }
-  
-  /* Responsive Forms */
-  form input,
-  form textarea {
-    width: 100%;
-    margin: 10px 0;
-  }
-  
-  /* Utility Classes */
-  .hide-mobile {
-    @media screen and (max-width: 768px) {
-      display: none;
+}
+
+@media (max-width: 800px) {
+    .mobile-cart {
+        display: block;
     }
-  }
-  
-  .show-mobile {
-    display: none;
-    @media screen and (max-width: 768px) {
-      display: block;
+    .mobile-cart a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
     }
-  }
-  
-  /* Responsive Spacing */
-  @media screen and (max-width: 768px) {
-    .section {
-      padding: 40px 0;
-    }
-    
-    .container {
-      padding: 0 15px;
-    }
-  }
-  
-  /* Responsive Tables */
-  @media screen and (max-width: 768px) {
-    table {
-      display: block;
-      overflow-x: auto;
-    }
-  }
-  
-  /* Animation Performance */
-  @media screen and (max-width: 768px) {
-    * {
-      -webkit-tap-highlight-color: transparent;
-    }
-    
-    .animate {
-      transition: none;
-    }
-  }
+}

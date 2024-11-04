@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - elevateFit</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .thank-you-container {
+            text-align: center;
+            padding: 50px 20px;
+            margin: 50px auto;
+            max-width: 600px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        .thank-you-container img {
+            width: 100px;
+            margin-bottom: 20px;
+        }
+
+        .thank-you-container h1 {
+            color: #ff523b;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+
+        .thank-you-container p {
+            color: #555;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        .order-number {
+            font-weight: bold;
+            color: #ff523b;
+        }
+
+        .redirect-message {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #888;
+        }
+
+        .countdown {
+            font-weight: bold;
+            color: #ff523b;
+        }
+
+        .loading-dots {
+            display: inline-block;
+            width: 20px;
+        }
+
+        @keyframes dots {
+            0%, 20% { content: '.'; }
+            40% { content: '..'; }
+            60% { content: '...'; }
+            80% { content: '....'; }
+            100% { content: '.....'; }
+        }
+
+        .loading-dots::after {
+            content: '.';
+            animation: dots 1.5s steps(5, end) infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="thank-you-container">
+        <h1>Thank You for Your Order!</h1>
+        <p>Your order has been successfully placed.</p>
+        <p>Order Number: <span class="order-number">#<script>document.write(Math.floor(Math.random() * 1000000))</script></span></p>
+        <p>We'll send you an email confirmation shortly with your order details.</p>
+        <p class="redirect-message">
+            You will be redirected to homepage in 
+            <span class="countdown">5</span> seconds<span class="loading-dots"></span>
+        </p>
+    </div>
+
+    <script>
+        // Countdown and redirect
+        let timeLeft = 5;
+        const countdownElement = document.querySelector('.countdown');
+        
+        const countdown = setInterval(() => {
+            timeLeft--;
+            countdownElement.textContent = timeLeft;
+            
+            if (timeLeft <= 0) {
+                clearInterval(countdown);
+                window.location.href = 'index.html';
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

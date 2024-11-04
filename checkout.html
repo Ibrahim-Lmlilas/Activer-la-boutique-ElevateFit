@@ -1,205 +1,363 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="keywords" content="Online Shopping Platform,Best Online Store,E-commerce Solutions,Digital Shopping Experience,Affordable Products,One-stop Shop,Weekly Deals,Featured Products,Shop by Category,Seasonal Sale,24/7 Customer Support,Track Your Order,Satisfaction Guaranteed,Special Offers,Flash Sale">
-        <meta name="description" content="Discover the best deals on top-quality products at our online store! Shop electronics, fashion, home decor, and more. Enjoy fast delivery, secure payment, and exclusive offers. Your one-stop shop for all your needs.">
-        <meta name="author" content="Ayoub Fetti">
-        <title>elevateFit</title>
-        <link rel="stylesheet" href="css/order.css">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/detail.css">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<!---- icon cdn link---->
-                                                  
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--we have added this view port tag and set initial scale to 1 so that our side shoudl be adjustable according to different devices especially for mobile devices-->
+    <title>elevateFit | The #1 Ecommerce Website </title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/detail.css">
+    <link rel="stylesheet" href="css/checkout.css">
+    <!--poppins font from google fonts website then select popping select some types and then embed-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!--link to connect to font awesome 4 to use different icons, just type font awesome 4 cdn and click on first link and copy the url and past it here with rel="stylesheet"-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    </head>
+    <!---- icon cdn link---->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- 
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"> -->
+    <!--- owl carsoul ---->
+
+<style>
+    .container{
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  @media (min-width: 1200px)
+  {
+    .container{
+      max-width: 1140px;
+    }
+  }
+  .d-flex{
+    display: flex;
+    flex-direction: row;
+    background: #f6f6f6;
+    border-radius: 0 0 5px 5px;
+    padding: 25px;
+    margin : 5rem auto;
+  }
+  form{
+    flex: 4;
+  }
+  .Yorder{
+    flex: 2;
+  }
+
+  h2{
+    margin: 0;
+    padding-left: 15px; 
+  }
+  .required{
+    color: red;
+  }
+  label, table{
+    display: block;
+    margin: 15px;
+  }
+  label>span{
+    float: left;
+    width: 25%;
+    margin-top: 12px;
+    padding-right: 10px;
+  }
+  input[type="text"], input[type="tel"], input[type="email"], select
+  {
+    width: 70%;
+    height: 30px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    border: 1px solid #dadada;
+  }
+  input[type="text"]:focus, input[type="tel"]:focus, input[type="email"]:focus, select:focus{
+    border : 1px solid #ff523b;
+  }
+  select{
+    width: 72%;
+    height: 45px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+  }
+  .Yorder{
+    margin-top: 15px;
+    height: 600px;
+    padding: 20px;
+    border: 1px solid #dadada;
+  }
+  table{
+    margin: 0;
+    padding: 0;
+  }
+  th{
+    border-bottom: 1px solid #dadada;
+    padding: 10px 0;
+  }
+  th:last-child{
+    text-align: center;
+  }
+  tr>td:nth-child(1){
+    text-align: left;
+    color: #2d2d2a;
+  }
+  tr>td:nth-child(2){
+    text-align: right;
+    color: #52ad9c;
+  }
+  td{
+    border-bottom: 1px solid #dadada;
+    padding: 25px 25px 25px 0;
+  }
+  
+  p{
+    display: block;
+    color: #888;
+    margin: 0;
+    padding-left: 25px;
+  }
+  .Yorder>div{
+    padding: 15px 0; 
+  }
+  
+  button{
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 30px;
+    background: #52ad9c;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    box-sizing: border-box;
+  }
+  button:hover{
+    cursor: pointer;
+    background: #428a7d;
+  }
+
+  .PaymentMethods{
+    margin: 20px;
+  }
+</style>
+
+</head>
+
 <body>
-    <header>
-      
-        <nav id="nav">
 
 
-            <a href="index.html"><img src="images/logo-white.png" class="logo" alt="log"></a>
 
-            <ul class="menu-bar-side">
-                <li><a href="index.html" style=" all: unset;">Home</a></li>
-                <li><a href="Products.html" style=" all: unset;">Shop</a></li>
-                <li><a href="#" style=" all: unset;">about</a></li>
-                <li><a href="#" style=" all: unset;">contact us</a></li>
-                <li><a href="#" style=" all: unset;">Wishlist</a></li>
-            </ul>
 
-            <ul class="menu-bar">
-
-                <li>&#36;0.00</li>
-                <li><a href="cart.html" style="all: unset;"><i class="fas fa-shopping-cart"></i></a></li>
-            </ul>  
-            
-            <div class="burger-menu">
-                <div class="burger-icon">&#9776;</div>
-            </div>
-        </nav>
-        <div class="side-menu">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="Products.html">Shop</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Wishlist</a></li>
-                <li class="total-price">Total: $0.00</li>
-                <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a></li>
-            </ul>
+    <div class="container">
+        <div class="title">
+            <h2>Product Order Form</h2>
         </div>
-   
-  </header>
-
-  <main>
-    <div class="order-container">
-        <h1 class="order-title">Product Order Form</h1>
-        <div class="order-form-wrapper">
-            <div class="order-form-left">
-                <div class="order-input-group">
-                    <label class="order-label order-required">First Name</label>
-                    <input type="text" name="firstName" required class="order-input">
-                </div>
-                
-                <div class="order-input-group">
-                    <label class="order-label order-required">Last Name</label>
-                    <input type="text" name="lastName" required class="order-input">
-                </div>
-
-                <div class="order-input-group">
-                    <label class="order-label">Company Name <span class="order-optional">(optional)</span></label>
-                    <input type="text" name="company" class="order-input">
-                </div>
-
-                <div class="order-input-group">
-                    <label class="order-label order-required">Country</label>
-                    <select name="country" required class="order-select">
-                        <option value="Morocco">Morocco</option>
-                        <option value="Algeria">Algeria</option>
-                        <option value="Tunis">Tunis</option>
-                        <option value="France">France</option>
-                        <option value="Espagne">Espagne</option>
-                        <option value="Italy">Italy</option>
-                        <!-- Ajoutez d'autres pays ici -->
+        <div class="d-flex">
+            <form action="" method="">
+                <label>
+                    <span class="fname">First Name <span class="required">*</span></span>
+                    <input type="text" name="fname">
+                </label>
+                <label>
+                    <span class="lname">Last Name <span class="required">*</span></span>
+                    <input type="text" name="lname">
+                </label>
+                <label>
+                    <span>Company Name (Optional)</span>
+                    <input type="text" name="cn">
+                </label>
+                <label>
+                    <span>Country <span class="required">*</span></span>
+                    <select name="selection">
+              
+                        <option value="MAR">Morocco</option>
+                        <option value="FRA">France</option>
+           
                     </select>
+                </label>
+                <label>
+                    <span>Street Address <span class="required">*</span></span>
+                    <input type="text" name="houseadd" placeholder="House number and street name" required>
+                </label>
+                <label>
+                    <span>&nbsp;</span>
+                    <input type="text" name="apartment" placeholder="Apartment, suite, unit etc. (optional)">
+                </label>
+                <label>
+                    <span>Town / City <span class="required">*</span></span>
+                    <input type="text" name="city">
+                </label>
+                <label>
+                    <span>State / County <span class="required">*</span></span>
+                    <input type="text" name="city">
+                </label>
+                <label>
+                    <span>Postcode / ZIP <span class="required">*</span></span>
+                    <input type="text" name="city">
+                </label>
+                <label>
+                    <span>Phone <span class="required">*</span></span>
+                    <input type="tel" name="city">
+                </label>
+                <label>
+                    <span>Email Address <span class="required">*</span></span>
+                    <input type="email" name="city">
+                </label>
+            </form>
+            <div class="Yorder">
+                 
+                <div class>
+                    <table id="orderSummaryTable">
+                        <tr>
+                            <th colspan="2">Your order</th>
+                        </tr>
+                        <!-- Cart items will be inserted here dynamically -->
+                        <tr>
+                            <td>Shipping</td>
+                            <td>Free shipping</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total</strong></td>
+                            <td id="totalAmount"><strong>$0.00</strong></td>
+                        </tr>
+                    </table>
+
+                <div class="PaymentMethods">
+                    <input type="radio" name="dbt" value="dbt" checked> Direct Bank Transfer
                 </div>
-
-                <div class="order-input-group">
-                    <label class="order-label order-required">Street Address</label>
-                    <input type="text" name="address1" placeholder="House number and street name" required class="order-input">
-                    <input type="text" name="address2" placeholder="Apartment, suite, unit etc. (optional)" class="order-input order-mt-2">
+                <p>
+                    Make your payment directly into our bank account. Please use your Order ID as the payment reference.
+                    Your order will not be shipped until the funds have cleared in our account.
+                </p>
+                <div class="PaymentMethods">
+                    <input type="radio" name="dbt" value="cd"> Cash on Delivery
                 </div>
-
-                <div class="order-input-group">
-                    <label class="order-label order-required">Town / City</label>
-                    <input type="text" name="city" required class="order-input">
+                <div class="PaymentMethods">
+                    <input type="radio" name="dbt" value="cd"> Paypal <span>
+                        <img src="https://www.logolynx.com/images/logolynx/c3/c36093ca9fb6c250f74d319550acac4d.jpeg"
+                            alt="" width="50">
+                    </span>
                 </div>
-
-                <div class="order-input-group">
-                    <label class="order-label order-required">State / County</label>
-                    <input type="text" name="state" required class="order-input">
-                </div>
-
-                <div class="order-input-group">
-                    <label class="order-label order-required">Postcode / ZIP</label>
-                    <input type="text" name="postcode" required class="order-input">
-                </div>
-
-                <div class="order-input-group">
-                    <label class="order-label order-required">Phone</label>
-                    <input type="text" name="phone" required class="order-input">
-                </div>
-
-                <div class="order-input-group">
-                    <label class="order-label order-required">Email Address</label>
-                    <input type="email" name="email" required class="order-input">
-                </div>
-            </div>
-
-            <div class="order-summary-box">
-                <h2 class="order-summary-title">Your order</h2>
-                <div class="order-summary-item">
-                    <span>Product(s) Quantity : <span id="checkout-quantity">0</span></span>
-                    <span style="color: #1E90FF;" id="checkout-total-price">$0.00</span>
-                </div>
-                <div class="order-payment-section">
-                    <div class="order-radio-wrapper">
-                        <input type="radio" id="bank-transfer" name="payment" checked class="order-radio">
-                        <label for="bank-transfer" class="order-radio-label">Direct Bank Transfer</label>
-                    </div>
-                    <p class="order-payment-info">Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.</p>
-
-                    <div class="order-radio-wrapper">
-                        <input type="radio" id="cash" name="payment" class="order-radio">
-                        <label for="cash" class="order-radio-label">Cash on Delivery</label>
-                    </div>
-
-                    <div class="order-radio-wrapper">
-                        <input type="radio" id="paypal" name="payment" class="order-radio">
-                        <label for="paypal" class="order-radio-label">PayPal</label>
-                    </div>
-
-                    <button class="order-submit-btn">Place Order</button>
-                </div>
-            </div>
+                <button type="button">Place Order</button>
+            </div><!-- Yorder -->
         </div>
     </div>
-  </main>
 
-   <footer>
-    <div class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="footer-col-1">
-                    <h3>Download Our App</h3>
-                    <p>Download App for Android and iOS mobile phone.</p>
-                    <div class="app-logo">
-                        <img src="images/play-store.png" alt="footer">
-                        <img src="images/app-store.png" alt="footer">
-                    </div>
-                </div>
-                <div class="footer-col-2">
-                    <img src="images/logo-white.png" alt="footer">
-                    <p>Our purpose is To Sustainably Make the Pleasure and Benefits of Sports Accessible to the Many.</p>
-                </div>
-                <div class="footer-col-3">
-                    <h3>Useful Links</h3>
-                    <ul>
-                        <li>Coupons</li>
-                        <li>Blog Post</li>
-                        <li>Return Policy</li>
-                        <li>Join Affiliate</li>
-                    </ul>
-                </div>
-                <div class="footer-col-4">
-                    <h3>Follow Us</h3>
-                    <ul>
-                        <li>Facebook</li>
-                        <li>Twitter</li>
-                        <li>Instagram</li>
-                        <li>Youtube</li>
-                    </ul>
-                </div>
-            </div>
-            <hr>
-            <a href="" class="copyright">Copyright 2024 - Made with ❤️ LorenzCipher</a>
-        </div>
-    </div>
-   </footer>
-   <!-----------------JS---------------------->
-   <script src="js/script.js"></script>
-   <script src="js/burger_menu.js"></script>
-   <script src="js/main.js"></script>
-   <script src="js/checkout.js"></script>
-   <script src="js/burger_menu.js"></script>
-   
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    displayOrderSummary();
+});
+
+function displayOrderSummary() {
+    // Get cart data from localStorage
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const orderTable = document.getElementById('orderSummaryTable');
+    let total = 0;
+
+    // Clear existing rows (except header and footer)
+    while (orderTable.rows.length > 2) {
+        orderTable.deleteRow(1);
+    }
+
+    // Display cart items and calculate total
+    cart.forEach(item => {
+        const row = orderTable.insertRow(1);
+        const nameCell = row.insertCell(0);
+        const priceCell = row.insertCell(1);
+        
+        const cleanPrice = item.price.toString().replace(/[^0-9.]/g, '');
+        const price = parseFloat(cleanPrice);
+        const quantity = parseInt(item.quantity) || 1;
+        const itemTotal = price * quantity;
+        
+        total += itemTotal;
+
+        nameCell.textContent = `${item.name} × ${quantity}`;
+        priceCell.textContent = `$${itemTotal.toFixed(2)}`;
+    });
+
+    // Update the total amount display
+    document.getElementById('totalAmount').innerHTML = `<strong>$${total.toFixed(2)}</strong>`;
+}
+
+function validateForm() {
+    // Get all required fields
+    const firstName = document.querySelector('input[name="fname"]').value;
+    const lastName = document.querySelector('input[name="lname"]').value;
+    const country = document.querySelector('select[name="selection"]').value;
+    const address = document.querySelector('input[name="houseadd"]').value;
+    const city = document.querySelector('input[name="city"]').value;
+    const phone = document.querySelector('input[type="tel"]').value;
+    const email = document.querySelector('input[type="email"]').value;
+    
+    // Basic validation
+    if (!firstName || !lastName) {
+        alert('Please enter your full name');
+        return false;
+    }
+    
+    if (!country) {
+        alert('Please select your country');
+        return false;
+    }
+    
+    if (!address) {
+        alert('Please enter your address');
+        return false;
+    }
+    
+    if (!city) {
+        alert('Please enter your city');
+        return false;
+    }
+    
+    if (!phone) {
+        alert('Please enter your phone number');
+        return false;
+    }
+    
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email || !emailRegex.test(email)) {
+        alert('Please enter a valid email address');
+        return false;
+    }
+    
+    // Check if cart has items
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    if (cart.length === 0) {
+        alert('Your cart is empty!');
+        return false;
+    }
+    
+    return true;
+}
+
+function placeOrder() {
+    if (validateForm()) {
+        // Clear the cart
+        localStorage.removeItem('cart');
+        
+        // Redirect to thank you page
+        window.location.href = 'thank-you.html';
+    }
+}
+
+// Add click event listener to the Place Order button
+document.querySelector('button[type="button"]').addEventListener('click', placeOrder);
+</script>
+
 </body>
+
 </html>

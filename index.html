@@ -1,15 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="Online Shopping Platform,Best Online Store,E-commerce Solutions,Digital Shopping Experience,Affordable Products,One-stop Shop,Weekly Deals,Featured Products,Shop by Category,Seasonal Sale,24/7 Customer Support,Track Your Order,Satisfaction Guaranteed,Special Offers,Flash Sale">
-    <meta name="description" content="Discover the best deals on top-quality products at our online store! Shop electronics, fashion, home decor, and more. Enjoy fast delivery, secure payment, and exclusive offers. Your one-stop shop for all your needs.">
-    <meta name="author" content="Ayoub Fetti">
     <!--we have added this view port tag and set initial scale to 1 so that our side shoudl be adjustable according to different devices especially for mobile devices-->
-    <title>elevateFit</title>
+    <title>elevateFit | The #1 Ecommerce Website </title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/banner.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
@@ -19,17 +15,17 @@
     <!--link to connect to font awesome 4 to use different icons, just type font awesome 4 cdn and click on first link and copy the url and past it here with rel="stylesheet"-->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!---- icon cdn link---->
+    <!-- icon cdn link-->
 
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <!--- owl carsoul ---->
-   
+    <!-- owl carsoul end-->
 </head>
 
 <body>
@@ -37,41 +33,34 @@
     <!--making header-->
     <header>
 
-        <nav id="nav">
-
-
-            <a href="index.html"><img src="images/logo-white.png" class="logo" alt="log"></a>
-
-            <ul class="menu-bar-side">
-                <li><a href="index.html" style=" all: unset;">Home</a></li>
-                <li><a href="Products.html" style=" all: unset;">Shop</a></li>
-                <li><a href="#" style=" all: unset;">about</a></li>
-                <li><a href="#" style=" all: unset;">contact us</a></li>
-                <li><a href="#" style=" all: unset;">Wishlist</a></li>
-            </ul>
-
-            <ul class="menu-bar">
-
-                <li>&#36;0.00</li>
-                <li><a href="cart.html" style="all: unset;"><i class="fas fa-shopping-cart"></i></a></li>
-            </ul>  
-            
-            <div class="burger-menu">
-                <div class="burger-icon">&#9776;</div>
-            </div>
-        </nav>
-        <div class="side-menu">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="Products.html">Shop</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Wishlist</a></li>
-                <li class="total-price">Total: $0.00</li>
-                <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a></li>
-            </ul>
-        </div>
-       
+        
+        
+        
+            <nav id="nav">
+                <img src="images/logo-white.png" alt="Logo Image" class="logo">
+                
+                <!-- Menu Icons (visible only on mobile) -->
+                <i class="fa fa-bars"></i>
+                <i class="fa fa-remove"></i>
+                
+                <!-- Navigation Links -->
+                <ul class="menu-bar-side">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Products.html">Shop</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <!-- Cart link for mobile -->
+                    <li class="mobile-cart"><a href="cart.html"><i class='fas fa-shopping-cart'></i> Cart</a></li>
+                </ul>
+        
+                <!-- Cart Section (visible on desktop) -->
+                <ul class="menu-bar">
+                    <li>&#36;0.00</li>
+                    <li><a href="cart.html"><i class='fas fa-shopping-cart'></i></a></li>
+                </ul>
+            </nav>
+        
+        
         
 
 
@@ -81,22 +70,22 @@
                 Raining Offers For Hot Summer!
             </h2>
 
-            <h4 >
+            <h4>
                 25% Off On All Products
             </h4>
-            <a href="Products.html" >
-            <button class="shopNow" style="border-radius: 20px;">
-               shop now
+           <a href="Products.html"> <button class="shopNow">
+                shop now
             </button>
         </a>
-            <button class="findMore"  style="border-radius: 20px;">
+        
+            <button class="findMore">
                 find more
             </button>
 
         </div>
 
     </header>
-    <!--- end header --->
+<!-- end of header -->
 
     <!--Featured categories-->
   
@@ -109,13 +98,13 @@
 
                 <!--3 columns for 3 images-->
                 <div class="col-3">
-                    <img src="images/category-1.jpg" alt="image">
+                    <img src="images/category-1.jpg" alt="">
                 </div>
                 <div class="col-3">
-                    <img src="images/category-2.jpg" alt="image">
+                    <img src="images/category-2.jpg" alt="">
                 </div>
                 <div class="col-3">
-                    <img src="images/category-3.jpg" alt="image">
+                    <img src="images/category-3.jpg" alt="">
                 </div>
 
             </div>
@@ -133,11 +122,26 @@
          
 
             
-            <div class="col-4 product" onclick="goToProduct({cat:'Home/ T-Shirt', name: 'Red Printed T-shirt', img: 'images/product-1.jpg', price: '$50.00', description: 'Description of Product 1.' })">
-                <a href="product-detail.html"><img src="images/product-1.jpg" alt="produit"></a>
+            <div class="col-4">
+                <a href="product-detail.html"><img src="images/product-1.jpg" alt="Product Image"></a>
                 <a href="product-detail.html">
                     <h4>Red Printed T-shirt</h4>
                 </a>
+                <div class="rating" data-category="shoes" data-price="60">
+                    <i class="fa fa-star"
+                        aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                </div>
+                <p>$50.00</p>
+            </div>
+
+            <div class="col-4">
+                <a href="product-detail.html"><img src="images/product-2.jpg" alt="Product Image"></a>
+
+                <h4>Red Printed T-shirt</h4>
                 <div class="rating">
                     <i class="fa fa-star"
                         aria-hidden="true"></i>
@@ -147,27 +151,11 @@
                     <i class="fa fa-star-o" aria-hidden="true"></i>
                 </div>
                 <p>$50.00</p>
-                <button class="add-to-cart"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Card</button>
             </div>
 
-            <div class="col-4 product" onclick="goToProduct({cat:'Home/ shoes', name: 'Black shoes', img: 'images/product-2.jpg', price: '$200.00', description: 'Description of Product 1.' })">
-                <a href="product-detail.html"><img src="images/product-2.jpg" alt="produit"></a>
-                <h4>Black shoes</h4>
-                <div class="rating">
-                    <i class="fa fa-star"
-                        aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star-o" aria-hidden="true"></i>
-                </div>
-                <p>$200.00</p>
-                <button class="add-to-cart"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Card</button>
-            </div>
-
-            <div class="col-4 product" onclick="goToProduct({cat:'Home/ Pants', name: 'Gray Pant', img: 'images/product-3.jpg', price: '$80.00', description: 'Description of Product 1.' })">
-            <a href="product-detail.html"><img src="images/product-3.jpg" alt="produit"></a>
-                <h4>Gray Pant</h4>
+            <div class="col-4">
+                <img src="images/product-3.jpg" alt="fds">
+                <h4>Red Printed T-shirt</h4>
                 <div class="rating">
                     <i class="fa fa-star"
                         aria-hidden="true"></i>
@@ -176,13 +164,12 @@
                     <i class="fa fa-star-half-o" aria-hidden="true"></i>
                     <i class="fa fa-star-o" aria-hidden="true"></i>
                 </div>
-                <p>$80.00</p>
-                <button class="add-to-cart"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Card</button>
+                <p>$50.00</p>
             </div>
 
-            <div class="col-4 product" onclick="goToProduct({cat:'Home/ T-Shirt', name: 'Darck Printed T-shirt', img: 'images/product-4.jpg', price: '$50.00', description: 'Description of Product 1.' })">
-                <a href="product-detail.html"><img src="images/product-4.jpg" alt="produit"></a>
-                <h4>Darck Printed T-shirt</h4>
+            <div class="col-4">
+                <img src="images/product-4.jpg" alt="qsdf">
+                <h4>Red Printed T-shirt</h4>
                 <div class="rating">
                     <i class="fa fa-star"
                         aria-hidden="true"></i>
@@ -193,7 +180,6 @@
 
                 </div>
                 <p>$50.00</p>
-                <button class="add-to-cart"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Card</button>
             </div>
         </div>
 
@@ -202,24 +188,9 @@
         <h2 class="title">Latest Products</h2>
         <div class="row">
 
-            <div class="col-4 product" onclick="goToProduct({cat:'Home/ Shoes', name: 'White Shoes', img: 'images/product-5.jpg', price: '$200.00', description: 'Description of Product 1.' })">
-                <a href="product-detail.html"><img src="images/product-5.jpg" alt="produit"></a>
-                <h4>White Shoes</h4>
-                <div class="rating">
-                    <i class="fa fa-star"
-                        aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star-o" aria-hidden="true"></i>
-                </div>
-                <p>$200.00</p>
-                <button class="add-to-cart"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Card</button>
-            </div>
-
-            <div class="col-4 product" onclick="goToProduct({cat:'Home/ T-Shirt', name: 'darck Printed T-shirt', img: 'images/product-6.jpg', price: '$50.00', description: 'Description of Product 1.' })">
-                <a href="product-detail.html"><img src="images/product-6.jpg" alt="produit"></a>
-                <h4>Darck Printed T-shirt</h4>
+            <div class="col-4">
+                <img src="images/product-5.jpg" alt="Product Image">
+                <h4>Red Printed T-shirt</h4>
                 <div class="rating">
                     <i class="fa fa-star"
                         aria-hidden="true"></i>
@@ -229,12 +200,25 @@
                     <i class="fa fa-star-o" aria-hidden="true"></i>
                 </div>
                 <p>$50.00</p>
-                <button class="add-to-cart"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Card</button>
             </div>
 
-            <div class="col-4 product" onclick="goToProduct({cat:'Home/ Socks', name: 'Sock', img: 'images/product-7.jpg', price: '$50.00', description: 'Description of Product 1.' })">
-                <a href="product-detail.html"><img src="images/product-7.jpg" alt="produit"></a>
-                <h4>Sock</h4>
+            <div class="col-4">
+                <img src="images/product-6.jpg" alt="Product Image">
+                <h4>Red Printed T-shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star"
+                        aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                </div>
+                <p>$50.00</p>
+            </div>
+
+            <div class="col-4">
+                <img src="images/product-7.jpg" alt="Product Image">
+                <h4>Red Printed T-shirt</h4>
                 <div class="rating">
                     <i class="fa fa-star"
                         aria-hidden="true"></i>
@@ -243,13 +227,12 @@
                     <i class="fa fa-star-half-o" aria-hidden="true"></i>
                     <i class="fa fa-star-o" aria-hidden="true"></i>
                 </div>
-                <p>$25.00</p>
-                <button class="add-to-cart"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Card</button>
+                <p>$50.00</p>
             </div>
 
-            <div class="col-4 product" onclick="goToProduct({cat:'Home/ Watch', name: 'Darck Watch', img: 'images/product-8.jpg', price: '$300.00', description: 'Description of Product 1.' })">
-                <a href="product-detail.html"><img src="images/product-8.jpg" alt="produit"></a>
-                <h4>Darck watch</h4>
+            <div class="col-4">
+                <img src="images/product-8.jpg" alt="Image product" >
+                <h4>Red Printed T-shirt</h4>
                 <div class="rating">
                     <i class="fa fa-star"
                         aria-hidden="true"></i>
@@ -259,14 +242,13 @@
                     <i class="fa fa-star-half-o" aria-hidden="true"></i>
 
                 </div>
-                <p>$300.00</p>
-                <button class="add-to-cart"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Card</button>
+                <p>$50.00</p>
             </div>
         </div>
         <div class="row">
-            <div class="col-4 product" onclick="goToProduct({cat:'Home/ Watch', name: 'Blue Watch', img: 'images/product-9.jpg', price: '$300.00', description: 'Description of Product 1.' })">
-                <a href="product-detail.html"><img src="images/product-9.jpg" alt="produit"></a>
-                <h4>Blue Watch</h4>
+            <div class="col-4">
+                <img src="images/product-9.jpg" alt="image product">
+                <h4>Red Printed T-shirt</h4>
                 <div class="rating">
                     <i class="fa fa-star"
                         aria-hidden="true"></i>
@@ -275,13 +257,12 @@
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star-o" aria-hidden="true"></i>
                 </div>
-                <p>$300.00</p>
-                <button class="add-to-cart"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Card</button>
+                <p>$50.00</p>
             </div>
 
-            <div class="col-4 product" onclick="goToProduct({cat:'Home/ Shoes', name: 'Black and Red Shoes', img: 'images/product-10.jpg', price: '$200.00', description: 'Description of Product 1.' })">
-                <a href="product-detail.html"><img src="images/product-10.jpg" alt="produit"></a>
-                <h4>Black and Red Shoes</h4>
+            <div class="col-4">
+                <img src="images/product-10.jpg" alt="image product">
+                <h4>Red Printed T-shirt</h4>
                 <div class="rating">
                     <i class="fa fa-star"
                         aria-hidden="true"></i>
@@ -290,13 +271,12 @@
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star-o" aria-hidden="true"></i>
                 </div>
-                <p>$200.00</p>
-                <button class="add-to-cart"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Card</button>
+                <p>$50.00</p>
             </div>
 
-            <div class="col-4 product" onclick="goToProduct({cat:'Home/ Shoes', name: 'White Shoes ', img: 'images/product-11.jpg', price: '$200.00', description: 'Description of Product 1.' })">
-                <a href="product-detail.html"><img src="images/product-11.jpg" alt="produit"></a>
-                <h4>White Shoes</h4>
+            <div class="col-4">
+                <img src="images/product-11.jpg" alt="image product">
+                <h4>Red Printed T-shirt</h4>
                 <div class="rating">
                     <i class="fa fa-star"
                         aria-hidden="true"></i>
@@ -305,13 +285,12 @@
                     <i class="fa fa-star-half-o" aria-hidden="true"></i>
                     <i class="fa fa-star-o" aria-hidden="true"></i>
                 </div>
-                <p>$200.00</p>
-                <button class="add-to-cart"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Card</button>
+                <p>$50.00</p>
             </div>
 
-            <div class="col-4 product" onclick="goToProduct({cat:'Home/ Pants', name: 'Black Pants', img: 'images/product-12.jpg', price: '$80.00', description: 'Description of Product 1.' })">
-                <a href="product-detail.html"><img src="images/product-12.jpg" alt="produit"></a>
-                <h4>Black Pants</h4>
+            <div class="col-4">
+                <img src="images/product-12.jpg" alt="image product">
+                <h4>Red Printed T-shirt</h4>
                 <div class="rating">
                     <i class="fa fa-star"
                         aria-hidden="true"></i>
@@ -321,8 +300,7 @@
                     <i class="fa fa-star-half-o" aria-hidden="true"></i>
 
                 </div>
-                <p>$80.00</p>
-                <button class="add-to-cart"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Card</button>
+                <p>$50.00</p>
             </div>
         </div>
 
@@ -334,17 +312,17 @@
             <div class="row">
 
                 <div class="col-2">
-                    <img src="images/exclusive.png" class="offer-img" alt="produit">
+                    <img src="images/exclusive.png" class="offer-img" alt="offer image">
                 </div>
 
-                <div class="col-2" onclick="goToProduct({cat:'Home/ Watch', name: 'Exclusively available on elevateFit', img: 'images/exclusive.png', price: '$200.00', description: 'Description of Product 1.' })">
+                <div class="col-2">
                     <p>Exclusively available on elevateFit</p>
                     <h1>Smart Band 4</h1>
                     <small>
                         The Mi Smart Band 4 features a 39.9% larger (than Mi Band 3) AMOLED color full-touch display
                         with adjustable brightness, so everything is clear as can be
                     </small>
-                    <a href="product-detail.html" class="btn">Buy Now
+                    <a href="" class="btn">Buy Now
                         &#8594;</a>
 
                 </div>
@@ -352,8 +330,7 @@
         </div>
     </div>
 
-    <!----------------testimonials-------------->
-
+<!--testmoinial-->
     <div class="testimonial">
         <div class="small container">
             <div class="row">
@@ -375,7 +352,7 @@
                         <i class="fa fa-star" aria-hidden="true"></i>
                         <i class="fa fa-star-half-o" aria-hidden="true"></i>
                     </div>
-                    <img src="images/user-1.png" alt="image">
+                    <img src="images/user-1.png" alt="image user">
                     <h3>Sean Parker</h3>
 
                 </div>
@@ -396,7 +373,7 @@
                         <i class="fa fa-star" aria-hidden="true"></i>
                         <i class="fa fa-star-half-o" aria-hidden="true"></i>
                     </div>
-                    <img src="images/user-2.png" alt="produit">
+                    <img src="images/user-2.png" alt="img">
                     <h3>Mike Smith</h3>
 
                 </div>
@@ -416,7 +393,7 @@
                         <i class="fa fa-star" aria-hidden="true"></i>
                         <i class="fa fa-star-half-o" aria-hidden="true"></i>
                     </div>
-                    <img src="images/user-3.png" alt="produit">
+                    <img src="images/user-3.png" alt="img">
                     <h3>Mable Joe</h3>
 
                 </div>
@@ -425,39 +402,39 @@
         </div>
     </div>
 
-    <!----------brands-------------->
+    <!--brands-->
 
     <div class="brands">
         <div class="small container">
             <div class="row">
                 <div class="col-5">
-                    <img src="images/logo-godrej.png" alt="produit">
+                    <img src="images/logo-godrej.png" alt="dff">
                 </div>
 
                 <div class="col-5">
-                    <img src="images/logo-oppo.png" alt="produit">
-                </div>
-
-
-                <div class="col-5">
-                    <img src="images/logo-coca-cola.png" alt="produit">
+                    <img src="images/logo-oppo.png" alt="ff">
                 </div>
 
 
                 <div class="col-5">
-                    <img src="images/logo-paypal.png" alt="produit">
+                    <img src="images/logo-coca-cola.png" alt="ff">
                 </div>
 
 
                 <div class="col-5">
-                    <img src="images/logo-philips.png" alt="produit">
+                    <img src="images/logo-paypal.png" alt="ff">
+                </div>
+
+
+                <div class="col-5">
+                    <img src="images/logo-philips.png" alt="dds">
                 </div>
 
             </div>
         </div>
     </div>
 
-    <!-------footer------->
+    <!--footer-->
     <div class="footer">
         <div class="container">
             <div class="row">
@@ -469,14 +446,14 @@
 
                   
                     <div class="app-logo">
-                        <img src="images/play-store.png" alt="footer">
-                        <img src="images/app-store.png" alt="footer">
+                        <img src="images/play-store.png" alt="gallery-1d">
+                        <img src="images/app-store.png" alt="according">
                     </div>
 
                 </div>
 
                 <div class="footer-col-2">
-                    <img src="images/logo-white.png" alt="footer">
+                    <img src="images/logo-white.png" alt="detailed">
                     <p>Our purpose is To Sustainably Make the Pleasure and Benefits of Sports Accessible to the Many.
                     </p>
                 </div>
@@ -509,11 +486,30 @@
         </div>
     </div>
 
-    <!-----------------JS----------------------->
+    <!--JS-->
+
+    <script>
+       
+        function openProductDetail(name, price, image, description) {
+            const product = { name, price, image, description };
+            localStorage.setItem('selectedProduct', JSON.stringify(product));
+            window.location.href = 'product-detail.html';
+        }
     
-    <script src="js/script.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/burger_menu.js"></script>
+        // Call this function when clicking on a product link
+        document.querySelectorAll('.col-4 a.btn').forEach((button, index) => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const product = e.currentTarget.closest('.col-4');
+                const name = product.querySelector('h4').textContent;
+                const price = product.querySelector('p').textContent;
+                const image = product.querySelector('img').src;
+                const description = "This is a detailed description of the product.";  // Customize per product
+                openProductDetail(name, price, image, description);
+            });
+        });</script>
+<script src="js/nav.js"></script>
+
 </body>
 
 </html>
