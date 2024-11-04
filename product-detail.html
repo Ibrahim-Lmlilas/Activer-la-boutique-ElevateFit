@@ -10,9 +10,35 @@
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!---- icon cdn link---->
 
+        <style>
+            .off-screen-menu{
+                background-color: black;
+                color: azure;
+                height: 100vh;
+                width: 100%;
+                max-width: 450px;
+                position: fixed;
+                top: 0;
+                right: -450px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                margin-bottom: 15px;
+                font-size: 1.5rem;
+                gap: 20px;
+                text-transform: uppercase;
+                z-index: 1;
+                transition: .3s ease;
+            }
+            .off-screen-menu.action{
+                right: 0;
+            }
+        </style>
 
 
     </head>
@@ -24,32 +50,52 @@
             <!--making header-->
             <header>
       
-        
                 <nav id="nav">
-                    <img src="images/logo-white.png" class="logo">
-                    
-                    <!-- Menu Icons (visible only on mobile) -->
-                    <i class="fa fa-bars"></i>
-                    <i class="fa fa-remove"></i>
-                    
-                    <!-- Navigation Links -->
+
+                    <a href="index.html"><img src="images/logo-white.png" class="logo"></a>
+        
                     <ul class="menu-bar-side">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="Products.html">Shop</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <!-- Cart link for mobile -->
-                        <li class="mobile-cart"><a href="cart.html"><i class='fas fa-shopping-cart'></i> Cart</a></li>
+                        <li><a href="index.html" style=" all: unset;">Home</a></li>
+                        <li><a href="Products.html" style=" all: unset;">Shope</a></li>
+                        <li><a href="#" style=" all: unset;">about</a></li>
+                        <li><a href="#" style=" all: unset;">contact us</a></li>
+                        <li><a href="#" style=" all: unset;">Wishlist</a></li>
                     </ul>
-            
-                    <!-- Cart Section (visible on desktop) -->
+        
                     <ul class="menu-bar">
+        
                         <li>&#36;0.00</li>
-                        <li><a href="cart.html"><i class='fas fa-shopping-cart'></i></a></li>
+                        <li><a href="cart.html" style="all: unset;"><i class="fas fa-shopping-cart"></i></a></li>
+        
                     </ul>
+        
+                    <i id="bar" class="fa fa-bars"></i>
                 </nav>
+        
+                <div class="off-screen-menu">
+                    <ul class="menu-bar-side">
+                        <li><a href="index.html" style=" all: unset;">Home</a></li>
+                        <li><a href="Products.html" style=" all: unset;">Shope</a></li>
+                        <li><a href="#" style=" all: unset;">about</a></li>
+                        <li><a href="#" style=" all: unset;">contact us</a></li>
+                        <li><a href="#" style=" all: unset;">Wishlist</a></li>
+                        <li>&#36;0.00</li>
+                        <li><a href="cart.html" style="all: unset;"><i class="fas fa-shopping-cart"></i></a></li>  
+                    </ul>
+                </div>
            
-          </header>
+            </header>
+            <script>
+                const hamMenu = document.getElementById("bar");
+                const offScreenMenu = document.querySelector('.off-screen-menu');
+        
+                hamMenu.addEventListener('click', () => {
+                    // Toggle the 'action' class on the off-screen menu
+                    offScreenMenu.classList.toggle('action');
+                });
+    
+            </script>
+
 
     <!------------Single Products Detail-------------->
    
@@ -87,28 +133,27 @@
             <!--column related to the text of single product-->
                 <div class="col-2">
                     <p id="product-cat">Home/ T-Shirt</p>
-                    <h1 id="product-name"> Red Printed T-Shirt by HRX</h1>
+                    <h1 id="product-name">Red Printed T-Shirt by HRX</h1>
                     <h4 id="product-price">$50.00</h4>
-
-                    <!--sizes selection-->
-                    <select>
+                
+                    <!-- Sizes selection -->
+                    <select id="product-size">
                         <option>Select Size</option>
                         <option>XXL</option>
                         <option>XL</option>
                         <option>Large</option>
                         <option>Medium</option>
-                        <option>>Small</option>
+                        <option>Small</option>
                     </select>
-                    
-                    <!--no of products-->
-                    <input type="number" value="1">
-                    <a href="" class="btn">Add To Cart</a><!--add to cart button-->
+                
+                    <!-- Number of products -->
+                    <input type="number" id="product-quantity" value="1" min="1">
+                    <a href="cart.html" class="btn">Add To Cart</a>
+                
                     <h3>Product Details <i class="fa fa-indent" aria-hidden="true"></i></h3>
                     <br>
-                    <p id="product-description">Give Your summer wardrobe a style upgrade with the HTX Men's 
-                    Active T-shirt. Team it with a pair of shorts for your morning
-                    Workout or a denims for an evening out with the guys.
-                    </p>
+                    <p id="product-description">Give your summer wardrobe a style upgrade with the HTX Men's 
+                    Active T-shirt. Team it with a pair of shorts for your morning workout or a denim for an evening out with the guys.</p>
                 </div>
             </div>
         </div>
@@ -188,16 +233,18 @@
     <div class="footer">
         <div class="container">
             <div class="row">
-                          
+                
+          
                 <div class="footer-col-1">
                     <h3>Download Our App</h3>
-                    <p>Download App for Android and Ios mobile phone.</p>                   
+                    <p>Download App for Android and Ios mobile phone.</p>
+                   
                  
                     <div class="app-logo">
                         <img src="images/play-store.png">
                         <img src="images/app-store.png">
                     </div>   
-
+                
                 </div>
 
                 <div class="footer-col-2">
@@ -213,7 +260,7 @@
                         <li>Return Policy</li>
                         <li>Join Affiliate</li>
                     </ul>
-
+                    
                 </div>
 
                 <div class="footer-col-4">
@@ -228,50 +275,17 @@
                 </div>
             </div>
     
-        <hr>
+            <hr>
             <a href="" class="copyright">Copyright 2024   - Made with ❤️ LorenzCipher</a>
         </div>
     </div>         
 
     <!-----------------JS----------------------->
-    
+ 
 <script src="js/script.js"></script>
-<script>
-function addToCart() {
-    const product = {
-        name: document.getElementById('product-name').textContent,
-        price: document.getElementById('product-price').textContent,
-        image: document.getElementById('product-img').src,
-        quantity: parseInt(document.querySelector('input[type="number"]').value) || 1
-    };
-    
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    
-    // Check if product already exists in cart
-    const existingProductIndex = cart.findIndex(item => item.name === product.name);
-    
-    if (existingProductIndex > -1) {
-        // If product exists, update quantity
-        cart[existingProductIndex].quantity += product.quantity;
-    } else {
-        // If product doesn't exist, add it to cart
-        cart.push(product);
-    }
-    
-    localStorage.setItem('cart', JSON.stringify(cart));
-    alert('Product added to cart');
-}
+<script src="js/addCart.js"></script>
 
-// Add event listener to "Add to Cart" button
-document.querySelector('.btn').addEventListener('click', function(e) {
-    e.preventDefault();
-    addToCart();
-});
-</script>
-
-<script src="js/nav.js"></script>
-<script src="js/filter.js"></script>
-
+    
     </body>
 
 </html>

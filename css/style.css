@@ -8,30 +8,6 @@ body{
     font-family: 'Poppins', sans-serif;
 }
 
-
-/* Style de base pour le bouton */
-
-.add-to-cart {
-    
-    padding: 10px 20px;
-    background-color: #a74828; /* Couleur de fond initiale */
-    color: #fff;
-    font-size: 16px;
-    text-align: center;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.2s ;
-}
-
-
-
-.ff{
-
-    display: flex;
-    justify-content: space-around;
-
-}
-
 .navbar{
     display: flex;
     align-items: center;
@@ -53,7 +29,7 @@ nav ul li{
 /*for menu links*/
 a{
     text-decoration: none;
-    color:#555;
+    /* color:#555; */
 }
 p{
     color:#555;
@@ -70,12 +46,6 @@ p{
     align-items: center;
     flex-wrap: wrap;/*wrap place single line or multi lines in given space.*/ 
     justify-content: space-around;/*"Display the flex items with space before, between, and after the lines:"*/
-}
-
-
-.col-2{
-    flex-basis: 50%;/*divide it into haif*/
-    min-width: 300px;
 }
 
 .col-2 img{
@@ -115,6 +85,12 @@ p{
 .categories{
     margin: 70px 0px;
 }
+.category-filter{
+    padding-bottom: 20px;
+}
+.Price-filter{
+    padding-bottom: 30px;
+}
 .col-3{
     flex-basis: 30%;/*30% for each image*/
     min-width: 250px;/*images should have min width of 250 px*/
@@ -126,11 +102,12 @@ p{
 /*featured products*/
 /*small container edit whole section consist of rows*/
 .small container{
-    
     max-width: 1080px;
     margin:auto;/*make images in center*/
     padding-left: 25px;
     padding-right: 25px;
+
+    
 }
 /*col-4 will edit col of images*/
 .col-4{
@@ -376,7 +353,7 @@ select:focus{
     padding: 0;
 }
 .single-product .col-2{
-    padding: 20px;
+    /* padding: 10px; */
     text-align: left;
 }
 
@@ -408,7 +385,7 @@ input:focus{
 }
 .small-img-row{
     display:flex;/*make all 4 images flexible*/
-    width: 46em;
+    width: 35em;
     justify-content: space-between;/*this will make all 4 images to take equal available space in single line without any gap, mean 25% each col, and to place gap between each col, we call col below and made 24% so to have a gap*/
 }
 .small-img-col{
@@ -416,6 +393,7 @@ input:focus{
 }
 .single-product .col-2 p{
     margin-left: 0px;
+    width: 300px;
 }
 .single-product .col-2 h1{
     margin-left: 0px;
@@ -449,7 +427,7 @@ td input{
 }
 td a{
     color: #ff523b;
-    ffont-size: 12px;
+    font-size: 12px;
 }
 td img{
     width: 80px;
@@ -547,49 +525,39 @@ form a{
     transform: translateX(100px);
     transition: transform 1s;
 }
-
-.cartt{
-    align-content: center;
-    margin-left: 100px;
-    margin-right: 100px;
-}
-.cartt h4{
-    color:#fff ;
-    background-color: #ff523b;
-    margin:15px 0 15px 0 ;
-}
-
-
-.cart-item {
-    display: flex;
-    align-items: center;
-     margin-bottom: 10px; 
-    }
- .cart-item img { 
-    margin-right: 10px; 
-}
- .cart-item p { 
-    margin: 0 10px; 
-}
- .total { 
-    font-weight: bold;
-     margin-top: 20px; 
-       }
- .quantity-input { 
-    width: 50px; 
-}
- .remove-btn { 
-    color: red; 
-    cursor: pointer; 
-    margin-left: 10px; 
-}
-
-.btn-checkout{
-    background-color: #ff523b;
+#applyFilter{
+    margin-left: 20px; 
+    padding: 10px; 
+    border-radius: 15px; 
+    background-color:#ff523b;
+    cursor: pointer;
     color: #fff;
-    padding: 10px 20px;
-    margin-left: 1000px
+    transition: transform 0.3s ease;
 }
+#applyFilter:hover{
+    background-color:transparent;
+    cursor: pointer;
+    color: #000;
+    transform: scale(1.1);
+    
+
+}
+input[type="range"]{
+    width: 150px; /* Longueur du curseur */
+    height: 10px; /* Hauteur du curseur */
+    background: #ddd; /* Couleur de fond de la barre */
+    border-radius: 5px; /* Coins arrondis */
+    outline: none;
+    cursor: pointer;
+        
+}
+
+
+
+
+
+
+
 
 
 
@@ -602,15 +570,14 @@ form a{
     .row{/*this is the row which we have used in every section*/
         text-align: center;/*when open on mobile, we make text in every row to be center align*/
     }
-    .col-2, .col-3,.col-4{/*for all columns view on mobile, we want one column single line occupying 100% width we not want 3 or 4 in single line*/
-        flex-basis: 100%;
-    }
+    
     /*for single product detail page*/
     .single-product .row{
         text-align: left;
     }
     .single-product .col-2{
-        padding: 20px;
+        /* padding: 20px; */
+        margin-left: 20px;
     }
     .single-product h1{
         font-size: 26px;
@@ -622,133 +589,62 @@ form a{
     }
 
 }
-/* Existing styles */
-
-/* Media Queries */
-@media screen and (max-width: 768px) {
-    .menu-bar-side {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background-color: #333;
-        padding: 20px;
-    }
-
-    .menu-bar-side.active {
-        display: flex;
-    }
-
-    .menu-toggle {
-        display: block;
-        background: none;
-        border: none;
-        cursor: pointer;
-    }
-
-    .bar {
-        display: block;
-        width: 25px;
-        height: 3px;
-        margin: 5px auto;
-        background-color: white;
-    }
-
-    .col-2, .col-3, .col-4 {
-        flex: 100%;
-        max-width: 100%;
-    }
-
-    .offer .row {
-        flex-direction: column;
-    }
-
-    .footer .row {
-        flex-direction: column;
-    }
-
-    .footer-col-1, .footer-col-2, .footer-col-3, .footer-col-4 {
-        flex-basis: 100%;
-        margin-bottom: 30px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .header .row {
-        text-align: center;
-    }
-
-    .col-2, .col-3, .col-4 {
-        flex-basis: 100%;
-    }
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-th, td {
-    padding: 10px;
-    text-align: center;
-    border-bottom: 1px solid #ddd;
-}
-
-tfoot td {
-    font-weight: bold;
-}
-
-.cart-item img {
-    width: 50px;
-}
-
-
-/* Add to your existing CSS */
-header nav {
-    display: flex;
-    align-items: center;
+/* style pour add to cart hover */
+.product {
     position: relative;
 }
 
-header nav img.logo {
-    height: 40px;
-    margin-right: 20px;
+.add-to-cart {
+    display: none; 
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: #ff6f61; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
 }
 
-header nav .menu-bar {
-    margin-left: auto;
+.add-to-cart i {
+    margin-right: 5px;
+}
+
+.product:hover .add-to-cart {
+    display: inline-flex; /* Afficher au survol */
+}
+.cart-main{
+    max-width: 80%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+/* style pour button de panier */
+.Checkout-bouton{
+    background-color: #ff523b;
+    color: #fff;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+  
+}
+.div-button{
     display: flex;
-    align-items: center;
-    gap: 20px;
+    justify-content: right;
+    margin-top: 30px;
+    margin-right: 15px;
 }
 
-@media (min-width: 801px) {
-    header nav .fa-bars,
-    header nav .fa-remove {
-        display: none;
-    }
+@media screen and (min-width: 768px) {
 
-    header nav .menu-bar-side {
-        display: flex;
-        gap: 20px;
-    }
-}
-
-@media (min-width: 801px) {
-    .mobile-cart {
-        display: none;
-    }
-}
-
-@media (max-width: 800px) {
-    .mobile-cart {
-        display: block;
-    }
-    .mobile-cart a {
-        display: flex;
-        align-items: center;
-        gap: 10px;
+    .single-product .col-2 {
+        padding: 10px;
+        text-align: left;
+        width: 48%;
     }
 }

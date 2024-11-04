@@ -162,112 +162,13 @@
     header nav .fa-remove:hover{
       color:#ff523b;
     }
-    
-    
-   
-    
   }
 
 
-  /* Base styles for desktop */
-header nav {
-  background: rgb(0 0 0 / 30%);
-  color: var(--white);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 25px 30px;
-  position: relative;
-}
-
-header nav img.logo {
-  width: 120px;
-  margin-right: 3em;
-}
-
-header nav .menu-bar-side {
-  display: flex;
-  gap: 20px;
-}
-
-header nav .menu-bar-side li a,
-header nav .menu-bar li {
-  color: var(--white);
-  text-transform: uppercase;
-}
-
-header nav .menu-bar {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-/* Hide burger menu icon and mobile cart on desktop */
-header nav .fa-bars,
-header nav .fa-remove,
-.mobile-cart {
-  display: none;
-}
-
-/* Media query for mobile devices */
-@media (max-width: 800px) {
-  header nav {
-      padding: 15px 20px;
-  }
-
-  header nav .fa-bars,
-  header nav .fa-remove {
-      display: block;
-      font-size: 24px;
-      cursor: pointer;
-      color: var(--white);
-  }
-
-  header nav .fa-remove {
-      display: none;
-  }
-
-  header nav .menu-bar-side {
-      position: fixed;
-      top: 70px;
-      left: -100%;
-      width: 80%;
-      height: 100vh;
-      background: rgba(0, 0, 0, 0.95);
-      padding: 40px 0;
-      flex-direction: column;
-      align-items: center;
-      transition: 0.5s ease;
-      z-index: 999;
-  }
-
-  header nav .menu-bar-side.active {
-      left: 0;
-  }
-
-  header nav .menu-bar-side li {
-      margin: 15px 0;
-      font-size: 18px;
-  }
-
-  header nav .menu-bar-side li a {
-      color: var(--white);
-  }
-
-  /* Hide desktop menu bar on mobile */
-  header nav .menu-bar {
-      display: none;
-  }
-
-  /* Show mobile cart in side menu */
-  .mobile-cart {
-      display: block;
-  }
-
-  .mobile-cart a {
+  @media only screen and (max-width: 768px){
+    .small-img-row {
       display: flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--white);
+      width: 16em;
+      justify-content: space-between;
+    }
   }
-}
